@@ -17,7 +17,7 @@
 
                       <div class="col-12 text-center">
                           <a href="/menu" class="btn-floating btn-lg blue accent-2"><i
-                                  class="fas fa-window-maximize" aria-hidden="true"></i></a>
+                                  class="fas fa-bars" aria-hidden="true"></i></a>
                           <h5>Menu</h5>
                       </div>
                   </div>
@@ -37,9 +37,9 @@
                   <div class="row mt-3 mb-3">
 
                       <div class="col-12 text-center">
-                          <a href="/about" class="btn-floating btn-lg green accent-2"><i
-                                  class="fas fa-user-friends" aria-hidden="true"></i></a>
-                          <h5>About Us</h5>
+                          <a href="/banner" class="btn-floating btn-lg green accent-2"><i
+                                  class="fas fa-window-maximize" aria-hidden="true"></i></a>
+                          <h5>Banner</h5>
                       </div>
                   </div>
                   <!-- Card Data -->

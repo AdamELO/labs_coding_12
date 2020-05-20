@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Menu;
+use App\Logo;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $menus = Menu::first();
-        return view('profil',compact('menus'));
+        $logo = Logo::first();
+        return view('profil',compact('menus','logo'));
     }
 }

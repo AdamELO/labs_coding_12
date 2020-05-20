@@ -17,7 +17,6 @@ class MenuTableSeeder extends Seeder
         'lien2' => 'Services',
         'lien3' => 'Blog',
         'lien4' => 'Contact',
-        'logo' => '/img/big-logo.png',
         ]);
     }
 }

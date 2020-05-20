@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Menu;
-use App\Logo;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Slogan;
 
-class MenuController extends Controller {
+class SloganController extends Controller {
     /**
     * Display a listing of the resource.
     *
@@ -15,9 +13,7 @@ class MenuController extends Controller {
     */
 
     public function index() {
-        $menus = Menu::first();
-        $logo = Logo::first();
-        return view( 'backoffice.menu', compact( 'menus','logo' ) );
+        //
     }
 
     /**
@@ -44,22 +40,22 @@ class MenuController extends Controller {
     /**
     * Display the specified resource.
     *
-    * @param  \App\Menu  $menu
+    * @param  int  $id
     * @return \Illuminate\Http\Response
     */
 
-    public function show( Menu $menu ) {
+    public function show( $id ) {
         //
     }
 
     /**
     * Show the form for editing the specified resource.
     *
-    * @param  \App\Menu  $menu
+    * @param  int  $id
     * @return \Illuminate\Http\Response
     */
 
-    public function edit( Menu $menu ) {
+    public function edit( $id ) {
         //
     }
 
@@ -67,33 +63,25 @@ class MenuController extends Controller {
     * Update the specified resource in storage.
     *
     * @param  \Illuminate\Http\Request  $request
-    * @param  \App\Menu  $menu
+    * @param  int  $id
     * @return \Illuminate\Http\Response
     */
 
-    public function update( Request $request, Menu $menu ) {
-        // $img = $request->file( 'logo' );
-        // if ( $img != null ) {
-        //     Storage::disk( 'public' )->delete( $menu->logo );
-        //     $newName = Storage::disk( 'public' )->put( '', $img );
-        //     $menu->logo = $newName;
-        // }
-        $menu->lien1 = $request->lien1;
-        $menu->lien2 = $request->lien2;
-        $menu->lien3 = $request->lien3;
-        $menu->lien4 = $request->lien4;
-        $menu->save();
-        return redirect()->route( 'menu.index' );
+    public function update( Request $request, Slogan $slogan ) {
+        $slogan = Slogan::first();
+        $slogan->title = $request->title;
+        $slogan->save();
+        return redirect()->route( 'banner.index' );
     }
 
     /**
     * Remove the specified resource from storage.
     *
-    * @param  \App\Menu  $menu
+    * @param  int  $id
     * @return \Illuminate\Http\Response
     */
 
-    public function destroy( Menu $menu ) {
+    public function destroy( $id ) {
         //
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Menu;
+use App\Logo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -25,7 +26,11 @@ Route::get('/profil', 'HomeController@index')->name('home');
 
 Route::get('/admin', function () {
     $menus = Menu::first();
-    return view('backoffice.admin',compact('menus'));
+    $logo = Logo::first();
+    return view('backoffice.admin',compact('menus','logo'));
 });
 
 Route::resource('/menu','MenuController');
+Route::resource('/banner','BannercarController');
+Route::resource('/slogan','SloganController');
+Route::resource('/logo','LogoController');

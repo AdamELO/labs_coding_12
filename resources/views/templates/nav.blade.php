@@ -1,10 +1,10 @@
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="logo">
-			@if (Storage::disk('public')->has($menus->logo))
-			<img src={{asset('storage/'.$menus->logo)}} alt=""><!-- Logo -->
+			@if (Storage::disk('public')->has($logo->logo))
+			<img src={{asset('storage/'.$logo->logo)}} alt=""><!-- Logo -->
 			@else
-			<img src="{{$menus->logo}}" alt=""><!-- Logo -->
+			<img src="{{$logo->logo}}" alt=""><!-- Logo -->
 			@endif
 		</div>
 		<!-- Navigation -->

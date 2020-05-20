@@ -38,10 +38,10 @@
         <!-- Logo -->
         <li class="logo-sn waves-effect py-3">
             <div class="text-center">
-                @if (Storage::disk('public')->has($menus->logo))
-                <a href="/" class="pl-0"><img width="111px" height="32px" src={{asset('storage/'.$menus->logo)}} alt="image"></a>
+                @if (Storage::disk('public')->has($logo->logo))
+                <a href="/" class="pl-0"><img width="111px" height="32px" src={{asset('storage/'.$logo->logo)}} alt="image"></a>
                 @else 
-                <a href="/" class="pl-0"><img width="111px" height="32px" src="{{$menus->logo}}" alt="image"></a>
+                <a href="/" class="pl-0"><img width="111px" height="32px" src="{{$logo->logo}}" alt="image"></a>
                 @endif
             </div>
         </li>
@@ -56,12 +56,12 @@
                 </li>
                 <li>
                     <a href="/menu" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-window-maximize text-info"></i>Menu
+                        <i class="w-fa fas fa-bars text-info"></i>Menu
                     </a>
                 </li>
                 <li>
-                    <a href="/about" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-user-friends green-text"></i>Us
+                    <a href="/banner" class="collapsible-header waves-effect">
+                        <i class="w-fa fas fa-window-maximize green-text"></i>Banner
                     </a>
                 </li>
                 <li>

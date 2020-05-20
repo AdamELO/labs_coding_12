@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Menu;
+use App\Logo;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -39,7 +40,8 @@ class LoginController extends Controller {
     }
 
     public function showLoginForm() {
+        $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'auth.login', compact( 'menus' ) );
+        return view( 'auth.login', compact( 'menus','logo') );
     }
 }
