@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePresentationsTable extends Migration
+class CreateTitresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreatePresentationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('presentations', function (Blueprint $table) {
+        Schema::create('titres', function (Blueprint $table) {
             $table->id();
-            $table->longText('description1');
-            $table->longText('description2');
-            $table->string('btn');
-            $table->string('lien');
-            $table->string('imgvideo');
+            $table->string('presentation');
+            $table->string('testimonial');
+            $table->string('service');
+            $table->string('team');
+            $table->string('serviceprim');
+            $table->string('contact');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreatePresentationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('presentations');
+        Schema::dropIfExists('titres');
     }
 }

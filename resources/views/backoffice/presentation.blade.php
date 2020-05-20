@@ -3,8 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <section class="section card mb-5">
-        <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Edit Presentation</h2>
-        <h5 class="text-center">ps: pour le titre vous pouvez mettre un mot entre parenthèse, celui-ci aura un style</h5>
+        <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Edit Présentation</h2>
         <div class="row">
 
             <!--Grid column-->
@@ -17,22 +16,16 @@
                     <div class="row">
                         
                         <!--Grid column-->
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="md-form mb-0">
                                 <input type="text" value="{{$presentation->lien}}" id="email" name="lien" class="form-control">
-                                <label for="email" class="">lien video</label>
+                                <label for="email" class="">Lien video</label>
                             </div>
                         </div>
-                        <div class=" col-md-4">
-                            <div class="md-form mb-0">
-                                <input type="text" value="{{$presentation->title}}" id="email" name="title" class="form-control">
-                                <label for="email" class="">Titre</label>
-                            </div>
-                        </div>
-                        <div class=" col-md-4">
+                        <div class=" col-md-6">
                             <div class="md-form mb-0">
                                 <input type="text" value="{{$presentation->btn}}" id="email" name="btn" class="form-control">
-                                <label for="email" class="">btn text</label>
+                                <label for="email" class="">Btn text</label>
                             </div>
                         </div>
                         <!--Grid column-->
@@ -42,7 +35,7 @@
                             <div class="md-form">
                                 <i class="fas fa-pencil-alt prefix"></i>
                                 <textarea id="form10" class="md-textarea form-control" name="desc1" rows="3">{{$presentation->description1}}</textarea>
-                                <label for="form10">description 1</label>
+                                <label for="form10">Description 1</label>
                               </div>
                         </div>
                         <!--Grid column-->
@@ -52,7 +45,7 @@
                             <div class="md-form">
                                 <i class="fas fa-pencil-alt prefix"></i>
                                 <textarea id="form10" class="md-textarea form-control" name="desc2" rows="3">{{$presentation->description2}}</textarea>
-                                <label for="form10">description 2</label>
+                                <label for="form10">Description 2</label>
                               </div>
                         </div>
                         <!--Grid column-->
@@ -77,7 +70,7 @@
                         <div class="row mt-3">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input  type="file" name="imgvideo" class="form-control-file pink-text" id="exampleFormControlFile1">
+                                    <input  type="file" name="imgvideo" class="form-control-file green-text" id="exampleFormControlFile1">
                                 </div>
                             </div>
                         </div>

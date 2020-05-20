@@ -59,36 +59,22 @@
                 </div>
             </div>
         </section>
-        <div class="row">
-            <form action='{{ route('logo.update',$logo->id) }}' method="post" enctype="multipart/form-data">
-                @method('put')
-                @csrf
-                <div>
-                    <a class="btn aqua-gradient" data-toggle="collapse" href="#collapseExample" aria-expanded="false"
-                        aria-controls="collapseExample">
-                        Cliquez ici si vous voulez changer l'image
-                    </a>
-                </div>
-                <!-- / Collapse buttons -->
-
-                <!-- Collapsible element -->
-                <div class="collapse" id="collapseExample">
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input type="file" name="logo" class="form-control-file" id="exampleFormControlFile1">
+        <section class="section card mb-5">
+            <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Edit Logo Navbar (& carousel banner)</h2>
+            <div class="row text-center">
+                <div class="col-md-12 text-center">
+                    <form action='{{ route('logo.update',$logo->id) }}' class="text-center" method="post" enctype="multipart/form-data">
+                        @method('put')
+                        @csrf
+                            <div class="form-group text-center">
+                                <input type="file" name="logo" class="form-control-file green-text" id="exampleFormControlFile1">
                             </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn blue-gradient text-center">Editer</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
-                <!-- / Collapsible element -->
-
-
-                <!-- Grid column -->
-                <div class="text-center">
-                    <button type="submit" class="btn blue-gradient text-center">Editer</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </section>
     </div>
 @endsection

@@ -85,7 +85,6 @@ class PresentationController extends Controller
             $imgde = Image::make( $thumbnailpath )->resize( 754, 407 );
             $imgde->save( $thumbnailpath );
         }
-        $presentation->title = $request->title;
         $presentation->description1 = $request->desc1;
         $presentation->description2 = $request->desc2;
         $presentation->lien = $request->lien;

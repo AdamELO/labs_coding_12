@@ -7,7 +7,27 @@
         <div class="row">
 
             <!-- Grid column -->
-          <div class="col-6 mb-4">
+            <div class="col-3 mb-4">
+
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card Data -->
+                    <div class="row mt-3 mb-3">
+                        <div class="col-12 text-center">
+                            <a href="/titre" class="btn-floating btn-lg green accent-2"><i
+                                    class="fas fa-heading" aria-hidden="true"></i></a>
+                          <h5>Titre Section</h5>
+                        </div>
+                    </div>
+                    <!-- Card Data -->
+                </div>
+                <!-- Card -->
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+          <div class="col-3 mb-4">
 
               <!-- Card -->
               <div class="card">
@@ -28,7 +48,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-          <div class="col-6 mb-4">
+          <div class="col-3 mb-4">
 
               <!-- Card -->
               <div class="card">
@@ -49,7 +69,7 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-6 mb-4">
+            <div class="col-3 mb-4">
 
               <!-- Card -->
               <div class="card">
@@ -68,9 +88,7 @@
               <!-- Card -->
            </div>
             <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-6 mb-4">
+            <div class="col-3 mb-4">
 
                 <!-- Card -->
                 <div class="card">
@@ -78,9 +96,9 @@
                     <!-- Card Data -->
                     <div class="row mt-3 mb-3">
                         <div class="col-12 text-center">
-                            <a href="/mail" class="btn-floating btn-lg green accent-2"><i
-                                    class="fas fa-envelope" aria-hidden="true"></i></a>
-                          <h5>Mails</h5>
+                            <a href="/testimonial" class="btn-floating btn-lg green accent-2"><i
+                                    class="fas fa-comments" aria-hidden="true"></i></a>
+                          <h5>Testimonial</h5>
                         </div>
                     </div>
                     <!-- Card Data -->
@@ -89,7 +107,7 @@
             </div>
             <!-- Grid column -->
 
-            <div class="col-12 mb-4">
+            {{-- <div class="col-12 mb-4">
 
               <!-- Card -->
               <div class="card">
@@ -105,7 +123,7 @@
                   <!-- Card Data -->
               </div>
               <!-- Card -->
-          </div>
+          </div> --}}
 
         </div>
         <!-- Grid row -->

@@ -48,39 +48,50 @@
 
         <!-- Side navigation links -->
         <li>
-            <ul class="collapsible collapsible-accordion">
+            <ul>
                 <li>
                     <a href="/admin" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-tools green-text"></i>Admin Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="/menu" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-bars text-info"></i>Menu
-                    </a>
-                </li>
-                <li>
-                    <a href="/banner" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-window-maximize green-text"></i>Banner
-                    </a>
-                </li>
-                <li>
-                    <a href="/presentation" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-photo-video text-info"></i>présentation
-                    </a>
-                </li>
-                <li>
-                    <a href="/mail" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-envelope green-text"></i>Mail
-                    </a>
-                </li>
-                <li>
-                    <a href="/adminpro" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-key text-info"></i>Admin profil
+                        <i class="w-fa fas fa-tools"></i> Admin Dashboard
                     </a>
                 </li>
             </ul>
         </li>
+        <li>
+            <ul class="collapsible collapsible-accordion">
+              <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> {{$menus->lien1}}<i
+                    class="fas fa-angle-down rotate-icon"></i></a>
+                <div class="collapsible-body">
+                  <ul class="list-unstyled">
+                    <li>
+                        <a href="/titre" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-heading green-text"></i>Titre section
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/menu" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-bars text-info"></i>Menu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/banner" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-window-maximize green-text"></i>Banner
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/presentation" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-photo-video text-info"></i>présentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/testimonial" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-comments green-text"></i>Testimonial
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
         <!-- Side navigation links -->
 
     </ul>

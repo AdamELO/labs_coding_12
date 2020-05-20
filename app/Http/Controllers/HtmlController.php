@@ -5,27 +5,33 @@ namespace App\Http\Controllers;
 use App\Bannercar;
 use App\Menu;
 use App\Logo;
+use App\Titre;
 use App\Presentation;
 use App\Slogan;
 use App\Service;
+use App\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class HtmlController extends Controller {
     public function home() {
         $menus = Menu::first();
+        $testimonials = Testimonial::all();
         $logo = Logo::first();
+        $titre = Titre::first();
         $slogan = Slogan::first();
         $bannercars = Bannercar::all();
         $services = Service::all();
         $presentation = Presentation::first();
-        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation' ) );
+        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation','titre','testimonials' ) );
     }
 
     public function services() {
+        $services = Service::all();
+        $titre = Titre::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'services', compact( 'menus','logo') );
+        return view( 'services', compact( 'menus','logo','services','titre') );
     }
 
     public function blog() {

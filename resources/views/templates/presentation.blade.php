@@ -3,14 +3,14 @@
             <div class="container">
                 <div class="section-title">
                     <?php
-                        $test = preg_match('#\((.*?)\)#', $presentation->title, $match);
+                        $test = preg_match('#\((.*?)\)#', $titre->presentation, $match);
                         if (!empty($match[0])) {
                         $mot =  $match[1];
                         $word = "($mot)";
-                        $presentation->title = str_replace($word, "<span>$mot</span>", $presentation->title);
+                        $titre->presentation = str_replace($word, "<span>$mot</span>", $titre->presentation);
                         }
                     ?>
-                    <h2>{!!$presentation->title!!}</h2>
+                    <h2>{!!$titre->presentation!!}</h2>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
