@@ -47,8 +47,9 @@ class HtmlController extends Controller {
     }
 
     public function contact() {
+        $titre = Titre::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'contact', compact( 'menus','logo' ) );
+        return view( 'contact', compact( 'menus','logo','titre' ) );
     }
 }

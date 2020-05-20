@@ -3,7 +3,15 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="section-title">
-				<h2>Get in <span>the Lab</span> and  meet the team</h2>
+				<?php
+                    $test = preg_match('#\((.*?)\)#', $titre->team, $match);
+                    if (!empty($match[0])) {
+                    $mot =  $match[1];
+                    $word = "($mot)";
+                    $titre->team = str_replace($word, "<span>$mot</span>", $titre->team);
+                    }
+                    ?>
+				<h2>{!!$titre->team!!}</h2>
 			</div>
 			<div class="row">
 				<!-- single member -->

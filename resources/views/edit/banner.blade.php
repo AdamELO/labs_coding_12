@@ -25,7 +25,7 @@
                         <div class="row mt-3">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input  type="file" name="img" class="form-control-file" id="exampleFormControlFile1">
+                                    <input  type="file" name="img" class="form-control-file green-text" id="exampleFormControlFile1">
                                 </div>
                             </div>
                         </div>

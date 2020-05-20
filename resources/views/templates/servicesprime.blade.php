@@ -3,7 +3,15 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="section-title">
-				<h2>Get in <span>the Lab</span> and  discover the world</h2>
+				<?php
+                    $test = preg_match('#\((.*?)\)#', $titre->serviceprim, $match);
+                    if (!empty($match[0])) {
+                    $mot =  $match[1];
+                    $word = "($mot)";
+                    $titre->serviceprim = str_replace($word, "<span>$mot</span>", $titre->serviceprim);
+                    }
+                ?>
+				<h2>{!!$titre->serviceprim!!}</h2>
 			</div>
 			<div class="row">
 				<!-- feature item -->

@@ -79,7 +79,7 @@ class LogoController extends Controller
             $logo->logo = $newName;
         }
         $logo->save();
-        return redirect()->route( 'banner.index' );
+        return redirect()->route( 'menu.index' );
     }
 
     /**

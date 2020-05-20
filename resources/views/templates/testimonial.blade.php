@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-4">
 					<div class="section-title left">
-						<?php
+					<?php
                         $test = preg_match('#\((.*?)\)#', $titre->testimonial, $match);
                         if (!empty($match[0])) {
                         $mot =  $match[1];
@@ -16,14 +16,17 @@
 						<h2>{!!$titre->testimonial!!}</h2>
 					</div>
 					<div class="owl-carousel" id="testimonial-slide">
-						@foreach ($testimonials as $testimonial)
-						<!-- single testimonial -->
+						@foreach ($testimonials->sortByDesc('created_at')->splice(0,6) as $testimonial)
 						<div class="testimonial">
 							<span>‘​‌‘​‌</span>
 							<p>{{$testimonial->description}}</p>
 							<div class="client-info">
 								<div class="avatar">
+								@if (Storage::disk('public')->has($testimonial->img))
+									<img src={{asset('storage/'.$testimonial->img)}} alt="">
+								@else 
 									<img src="{{$testimonial->img}}" alt="">
+								@endif
 								</div>
 								<div class="client-name">
 									<h2>{{$testimonial->name}} {{$testimonial->prename}}</h2>

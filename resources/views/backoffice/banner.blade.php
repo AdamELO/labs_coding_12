@@ -1,7 +1,7 @@
 @extends('templates.dashboard')
 
 @section('content')
-<h2 class="text-center green-text">Banner carousel</h2>
+    <h2 class="text-center green-text">Banner carousel</h2>
     <div class="container">
         <div class="text-center mt-2 mb-5">
             <a class="btn-floating btn-lg dusty-grass-gradient text-white" href='banner/create'>
@@ -44,33 +44,33 @@
             @endforeach
         </div>
         <hr class="border border-success">
-                <div class="row">
-                    <div class="col-7 border-right">
-                        <h2 class="text-left mb-2 green-text">Logo :</h2>
-                        <form action='{{ route('logo.update',$logo->id) }}' method="POST" enctype="multipart/form-data">
-                            @csrf
-                            @method('put')
-                                        <div class="form-group">
-                                            <input  type="file" name="logo" class="form-control-file green-text" id="exampleFormControlFile1">
-                                        </div>
-                            <div class="text-left">
-                                <button type="submit" class="btn blue-gradient text-center">Editer</button>
-                            </div>
-                        </form>
+        <div class="row">
+            <div class="col-7 border-right">
+                <h2 class="text-left mb-2 green-text">Logo :</h2>
+                <form action='{{ route('logo.update',$logo->id) }}' method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('put')
+                    <div class="form-group">
+                        <input type="file" name="logo" class="form-control-file green-text" id="exampleFormControlFile1">
                     </div>
-                    <div class="col-4">
-                        <h2 class="text-left mb-2 green-text">Slogan :</h2>
-                        <form action='{{ route('slogan.update',$slogan->id) }}' method="post" enctype="multipart/form-data">
-                            @method('put')
-                            @csrf
-                            <div class="form-group">
-                                <input size="auto" type="text" value="{{$slogan->title}}" name="title">
-                            </div>
-                            <div class="text-left">
-                                <button type="submit" class="btn blue-gradient text-center">Editer</button>
-                            </div>
-                        </form>
+                    <div class="text-left">
+                        <button type="submit" class="btn blue-gradient text-center">Editer</button>
                     </div>
-                </div>
+                </form>
+            </div>
+            <div class="col-4">
+                <h2 class="text-left mb-2 green-text">Slogan :</h2>
+                <form action='{{ route('slogan.update',$slogan->id) }}' method="post" enctype="multipart/form-data">
+                    @method('put')
+                    @csrf
+                    <div class="form-group">
+                        <input size="auto" type="text" class="form-control" value="{{$slogan->title}}" name="title">
+                    </div>
+                    <div class="text-left">
+                        <button type="submit" class="btn blue-gradient text-center">Editer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 @endsection

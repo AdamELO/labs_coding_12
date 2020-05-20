@@ -7,7 +7,7 @@
             <div class="row">
 
                 <div class="col-md-12 mb-md-0 mb-5">
-                    <form id="contact-form" class="container" action='{{ route('titre.update',$titre->id) }}' method="post">
+                    <form id="contact-form" class="container" action='{{ route('titre.update',$titre) }}' method="post">
                         @csrf
                         @method('put')
                         <div class="row">

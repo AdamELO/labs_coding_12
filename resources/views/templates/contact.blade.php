@@ -5,7 +5,15 @@
 				<!-- contact info -->
 				<div class="col-md-5 col-md-offset-1 contact-info col-push">
 					<div class="section-title left">
-						<h2>Contact us</h2>
+						<?php
+                        	$test = preg_match('#\((.*?)\)#', $titre->contact, $match);
+                        	if (!empty($match[0])) {
+                        	$mot =  $match[1];
+                        	$word = "($mot)";
+                        	$titre->contact = str_replace($word, "<span>$mot</span>", $titre->contact);
+                        }
+                    	?>	
+						<h2>{!!$titre->contact!!}</h2>
 					</div>
 					<p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. </p>
 					<h3 class="mt60">Main Office</h3>
