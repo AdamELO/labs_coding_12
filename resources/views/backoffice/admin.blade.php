@@ -16,9 +16,9 @@
                   <div class="row mt-3 mb-3">
 
                       <div class="col-12 text-center">
-                          <a href="/header" class="btn-floating btn-lg blue accent-2"><i
+                          <a href="/menu" class="btn-floating btn-lg blue accent-2"><i
                                   class="fas fa-window-maximize" aria-hidden="true"></i></a>
-                          <h5>Header-Banner</h5>
+                          <h5>Menu</h5>
                       </div>
                   </div>
                   <!-- Card Data -->
@@ -37,7 +37,7 @@
                   <div class="row mt-3 mb-3">
 
                       <div class="col-12 text-center">
-                          <a href="/about" class="btn-floating btn-lg pink accent-2"><i
+                          <a href="/about" class="btn-floating btn-lg green accent-2"><i
                                   class="fas fa-user-friends" aria-hidden="true"></i></a>
                           <h5>About Us</h5>
                       </div>
@@ -78,7 +78,7 @@
                     <!-- Card Data -->
                     <div class="row mt-3 mb-3">
                         <div class="col-12 text-center">
-                            <a href="/mail" class="btn-floating btn-lg pink accent-2"><i
+                            <a href="/mail" class="btn-floating btn-lg green accent-2"><i
                                     class="fas fa-envelope" aria-hidden="true"></i></a>
                           <h5>Mails</h5>
                         </div>

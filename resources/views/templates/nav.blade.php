@@ -1,19 +1,24 @@
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="logo">
-			<img src="/img/logo.png" alt=""><!-- Logo -->
+			@if (Storage::disk('public')->has($menus->logo))
+			<img src={{asset('storage/'.$menus->logo)}} alt=""><!-- Logo -->
+			@else
+			<img src="{{$menus->logo}}" alt=""><!-- Logo -->
+			@endif
 		</div>
 		<!-- Navigation -->
 		<div class="responsive"><i class="fa fa-bars"></i></div>
 		<nav>
 			<ul class="menu-list">
-				<li class="{{ \Request::is('/') ? 'active' : '' }}"><a href="/">Home</a></li>
-				<li class="{{ \Request::is('services') ? 'active' : '' }}"><a href="/services">Services</a></li>
-				<li class="{{ \Request::is('blog') ? 'active' : '' }}"><a href="/blog">Blog</a></li>
-				<li class="{{ \Request::is('contact') ? 'active' : '' }}"><a href="/contact">Contact</a></li>
+				<li class="{{ \Request::is('/') ? 'active' : '' }}"><a href="/">{{$menus->lien1}}</a></li>
+				<li class="{{ \Request::is('services') ? 'active' : '' }}"><a href="/services">{{$menus->lien2}}</a></li>
+				<li class="{{ \Request::is('blog') ? 'active' : '' }}"><a href="/blog">{{$menus->lien3}}</a></li>
+				<li class="{{ \Request::is('contact') ? 'active' : '' }}"><a href="/contact">{{$menus->lien4}}</a></li>
 				@if (Route::has('login'))
                     @auth
 						<li class="{{ \Request::is('profil') ? 'active' : '' }}"><a href="{{ url('/profil') }}">Profil</a></li>
+						<li class="{{ \Request::is('admin') ? 'active' : '' }}"><a href="{{ url('/admin') }}">Admin</a></li>
 						<li class="nav-item dropdown">
 							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 								{{ Auth::user()->name }} <span class="caret"></span>

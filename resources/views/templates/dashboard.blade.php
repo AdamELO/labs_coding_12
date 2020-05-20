@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TheRealWedding</title>
+    <title>The Labs</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -38,7 +38,11 @@
         <!-- Logo -->
         <li class="logo-sn waves-effect py-3">
             <div class="text-center">
-                <a href="/" class="pl-0"><img src="/img/logo.png" alt="image"></a>
+                @if (Storage::disk('public')->has($menus->logo))
+                <a href="/" class="pl-0"><img width="111px" height="32px" src={{asset('storage/'.$menus->logo)}} alt="image"></a>
+                @else 
+                <a href="/" class="pl-0"><img width="111px" height="32px" src="{{$menus->logo}}" alt="image"></a>
+                @endif
             </div>
         </li>
 
@@ -47,17 +51,17 @@
             <ul class="collapsible collapsible-accordion">
                 <li>
                     <a href="/admin" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-tools pink-text"></i>Admin Dashboard
+                        <i class="w-fa fas fa-tools green-text"></i>Admin Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="/header" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-window-maximize text-info"></i>Header
+                    <a href="/menu" class="collapsible-header waves-effect">
+                        <i class="w-fa fas fa-window-maximize text-info"></i>Menu
                     </a>
                 </li>
                 <li>
                     <a href="/about" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-user-friends pink-text"></i>Us
+                        <i class="w-fa fas fa-user-friends green-text"></i>Us
                     </a>
                 </li>
                 <li>
@@ -67,7 +71,7 @@
                 </li>
                 <li>
                     <a href="/mail" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-envelope pink-text"></i>Mail
+                        <i class="w-fa fas fa-envelope green-text"></i>Mail
                     </a>
                 </li>
                 <li>
@@ -92,13 +96,14 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link" href="/">Home</a></li>
-                        <li><a class="nav-link" href="/services">Services</a></li>
-                        <li><a class="nav-link" href="/blog">Blog</a></li>
-                        <li><a class="nav-link" href="/contact">Contact</a></li>
+                        <li><a class="nav-link" href="/">{{$menus->lien1}}</a></li>
+                        <li><a class="nav-link" href="/services">{{$menus->lien2}}</a></li>
+                        <li><a class="nav-link" href="/blog">{{$menus->lien3}}</a></li>
+                        <li><a class="nav-link" href="/contact">{{$menus->lien4}}</a></li>
                         @if (Route::has('login'))
                         @auth
                         <li><a class="nav-link" href="{{ url('/profil') }}">Profil</a></li>
+                        <li><a class="nav-link" href="{{ url('/admin') }}">Admin</a></li>
                         @else
                         <li><a class="nav-link" href="{{ route('login') }}">connection</a></li>
 
@@ -139,12 +144,6 @@
         @yield('content')
     </main>
     {{-- endlayout --}}
-    	<!-- Footer section -->
-	<footer class="footer-section">
-		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
-	</footer>
-	<!-- Footer section end -->
-
 
     <!-- SCRIPTS -->
     <!-- JQuery -->

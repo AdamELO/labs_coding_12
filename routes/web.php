@@ -1,8 +1,8 @@
 <?php
 
+use App\Menu;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,31 +13,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::get('/services', function () {
-    return view('services');
-});
-
-Route::get('/blog', function () {
-    return view('blog');
-});
-
-Route::get('/blog-post', function () {
-    return view('article');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/', 'HtmlController@home');
+Route::get('/services', 'HtmlController@services');
+Route::get('/blog', 'HtmlController@blog');
+Route::get('/contact', 'HtmlController@contact');
+Route::get('/blog-post', 'HtmlController@blogpost');
 
 Auth::routes();
 
 Route::get('/profil', 'HomeController@index')->name('home');
 
 Route::get('/admin', function () {
-    return view('backoffice.admin');
+    $menus = Menu::first();
+    return view('backoffice.admin',compact('menus'));
 });
+
+Route::resource('/menu','MenuController');
