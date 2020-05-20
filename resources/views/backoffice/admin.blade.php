@@ -58,9 +58,9 @@
                   <div class="row mt-3 mb-3">
 
                       <div class="col-12 text-center">
-                          <a href="/gallery" class="btn-floating btn-lg blue accent-2"><i
-                                  class="fas fa-images" aria-hidden="true"></i></a>
-                          <h5>Gallery Images</h5>
+                          <a href="/presentation" class="btn-floating btn-lg blue accent-2"><i
+                                  class="fas fa-photo-video" aria-hidden="true"></i></a>
+                          <h5>Présentation</h5>
                       </div>
                   </div>
                   <!-- Card Data -->

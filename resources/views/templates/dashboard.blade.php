@@ -65,8 +65,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/gallery" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-images text-info"></i>Gallery
+                    <a href="/presentation" class="collapsible-header waves-effect">
+                        <i class="w-fa fas fa-photo-video text-info"></i>présentation
                     </a>
                 </li>
                 <li>

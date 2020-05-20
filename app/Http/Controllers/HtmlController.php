@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Bannercar;
 use App\Menu;
 use App\Logo;
+use App\Presentation;
 use App\Slogan;
+use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -15,7 +17,9 @@ class HtmlController extends Controller {
         $logo = Logo::first();
         $slogan = Slogan::first();
         $bannercars = Bannercar::all();
-        return view( 'index', compact( 'menus','bannercars','slogan','logo' ) );
+        $services = Service::all();
+        $presentation = Presentation::first();
+        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation' ) );
     }
 
     public function services() {

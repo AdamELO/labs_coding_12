@@ -1,5 +1,5 @@
 	<!-- Contact section -->
-	<div class="contact-section spad fix">
+	<div class="contact-section spad fix" id="contact">
 		<div class="container">
 			<div class="row">
 				<!-- contact info -->

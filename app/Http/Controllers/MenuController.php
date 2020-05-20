@@ -72,12 +72,6 @@ class MenuController extends Controller {
     */
 
     public function update( Request $request, Menu $menu ) {
-        // $img = $request->file( 'logo' );
-        // if ( $img != null ) {
-        //     Storage::disk( 'public' )->delete( $menu->logo );
-        //     $newName = Storage::disk( 'public' )->put( '', $img );
-        //     $menu->logo = $newName;
-        // }
         $menu->lien1 = $request->lien1;
         $menu->lien2 = $request->lien2;
         $menu->lien3 = $request->lien3;

@@ -34,3 +34,4 @@ Route::resource('/menu','MenuController');
 Route::resource('/banner','BannercarController');
 Route::resource('/slogan','SloganController');
 Route::resource('/logo','LogoController');
+Route::resource('/presentation','PresentationController');
