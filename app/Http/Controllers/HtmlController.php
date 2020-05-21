@@ -34,12 +34,13 @@ class HtmlController extends Controller {
     }
 
     public function services() {
+        $servicesprime = Service::orderBy('created_at','DESC')->take(6)->get();
         $services = Service::Paginate(9);
         $contact = Contact::first();
         $titre = Titre::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'services', compact( 'menus','logo','services','titre','contact') );
+        return view( 'services', compact( 'menus','logo','services','titre','contact','servicesprime') );
     }
 
     public function blog() {

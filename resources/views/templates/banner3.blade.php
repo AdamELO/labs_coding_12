@@ -3,10 +3,10 @@
 		<div class="overlay"></div>
 		<div class="container text-right">
 			<div class="page-info">
-				<h2>{{$menus->lien2}}</h2>
+				<h2>{{$menus->lien4}}</h2>
 				<div class="page-links">
 					<a href="/">{{$menus->lien1}}</a>
-					<span>{{$menus->lien2}}</span>
+					<span>{{$menus->lien4}}</span>
 				</div>
 			</div>
 		</div>

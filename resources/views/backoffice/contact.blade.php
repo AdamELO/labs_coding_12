@@ -2,11 +2,11 @@
 @section('content')
     <div class="container-fluid">
         <section class="section card mb-5">
-            <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Edit Ready mini home banner</h2>
+            <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Edit Contact info</h2>
             <div class="row">
 
                 <div class="col-md-12 mb-md-0 mb-5">
-                    <form id="contact-form" class="container" action='{{ route('contact.update',$contact) }}' method="post">
+                    <form id="contact-form" class="container" action='{{ route('contactinfo.update',$contact->id) }}' method="post">
                         @csrf
                         @method('put')
                         <div class="row">

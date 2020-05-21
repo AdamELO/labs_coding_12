@@ -168,7 +168,7 @@
                     <!-- Card Data -->
                     <div class="row mt-3 mb-3">
                         <div class="col-12 text-center">
-                            <a href="/contact" class="btn-floating btn-lg green accent-2"><i
+                            <a href="/contactinfo" class="btn-floating btn-lg green accent-2"><i
                                     class="fas fa-phone" aria-hidden="true"></i></a>
                           <h5>Contact info</h5>
                         </div>

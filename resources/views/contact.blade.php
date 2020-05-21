@@ -9,7 +9,7 @@
 @endsection
 
 @section('banner')
-    @include('templates.banner')
+    @include('templates.banner3')
 @endsection
 
 @section('googlemaps')

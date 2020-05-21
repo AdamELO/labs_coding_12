@@ -9,7 +9,7 @@
 @endsection
 
 @section('banner')
-    @include('templates.banner')
+    @include('templates.banner2')
 @endsection
 
 @section('blog')

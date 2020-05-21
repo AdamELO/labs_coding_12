@@ -29,7 +29,7 @@
 				@endforeach
 			</div>
 			<div class="text-center">
-				<a href="" class="site-btn">Browse</a>
+				<a href="services/#serviceprime" class="site-btn">Browse</a>
 				{{$services->links()}}
 			</div>
 		</div>

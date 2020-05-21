@@ -106,7 +106,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/contact" class="collapsible-header waves-effect">
+                        <a href="/contactinfo" class="collapsible-header waves-effect">
                             <i class="w-fa fas fa-phone green-text"></i>Contact
                         </a>
                     </li>

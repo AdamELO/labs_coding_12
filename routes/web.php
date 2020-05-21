@@ -39,4 +39,4 @@ Route::resource('/titre','TitreController');
 Route::resource('/testimonial','TestimonialController');
 Route::resource('/service','ServiceController');
 Route::resource('/ready','ReadyController');
-Route::resource('/contact','ContactController');
+Route::resource('/contactinfo','ContactController');

@@ -6,7 +6,7 @@
 				<div class="col-md-4 col-sm-6">
 					<div class="sv-card">
 						<div class="card-img">
-							<img src="img/card-1.jpg" alt="">
+							<img src="/img/card-1.jpg" alt="">
 						</div>
 						<div class="card-text">
 							<h2>Get in the lab</h2>
@@ -18,7 +18,7 @@
 				<div class="col-md-4 col-sm-6">
 					<div class="sv-card">
 						<div class="card-img">
-							<img src="img/card-2.jpg" alt="">
+							<img src="/img/card-2.jpg" alt="">
 						</div>
 						<div class="card-text">
 							<h2>Projects online</h2>
@@ -30,7 +30,7 @@
 				<div class="col-md-4 col-sm-12">
 					<div class="sv-card">
 						<div class="card-img">
-							<img src="img/card-3.jpg" alt="">
+							<img src="/img/card-3.jpg" alt="">
 						</div>
 						<div class="card-text">
 							<h2>SMART MARKETING</h2>

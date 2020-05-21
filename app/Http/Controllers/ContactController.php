@@ -72,8 +72,9 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request,$id)
     {
+        $contact = Contact::find($id);
         $contact->btn = $request->btn;
         $contact->text = $request->text;
         $contact->email = $request->email;
@@ -82,7 +83,7 @@ class ContactController extends Controller
         $contact->phone = $request->phone;
         $contact->subtitle = $request->subtitle;
         $contact->save();
-        return redirect()->route( 'contact.index' );
+        return redirect()->route( 'contactinfo.index' );
     }
 
     /**
