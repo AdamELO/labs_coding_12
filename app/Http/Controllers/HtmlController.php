@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Bannercar;
+use App\Ready;
 use App\Menu;
 use App\Logo;
+use App\Contact;
 use App\Titre;
 use App\Presentation;
 use App\Slogan;
@@ -25,16 +27,19 @@ class HtmlController extends Controller {
         $bannercars = Bannercar::all();
         $services = Service::Paginate(9);
         $services1 = Service::all();
+        $ready = Ready::first();
         $presentation = Presentation::first();
-        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation','titre','testimonials','services1' ) );
+        $contact = Contact::first();
+        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation','titre','testimonials','services1','ready','contact' ) );
     }
 
     public function services() {
         $services = Service::Paginate(9);
+        $contact = Contact::first();
         $titre = Titre::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'services', compact( 'menus','logo','services','titre') );
+        return view( 'services', compact( 'menus','logo','services','titre','contact') );
     }
 
     public function blog() {
@@ -50,9 +55,10 @@ class HtmlController extends Controller {
     }
 
     public function contact() {
+        $contact = Contact::first();
         $titre = Titre::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'contact', compact( 'menus','logo','titre' ) );
+        return view( 'contact', compact( 'menus','logo','titre','contact' ) );
     }
 }

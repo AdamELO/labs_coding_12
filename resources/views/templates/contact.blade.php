@@ -15,11 +15,11 @@
                     	?>	
 						<h2>{!!$titre->contact!!}</h2>
 					</div>
-					<p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. </p>
-					<h3 class="mt60">Main Office</h3>
-					<p class="con-item">C/ Libertad, 34 <br> 05200 Arévalo </p>
-					<p class="con-item">0034 37483 2445 322</p>
-					<p class="con-item">hello@company.com</p>
+					<p>{{$contact->text}}</p>
+					<h3 class="mt60">{{$contact->subtitle}}</h3>
+					<p class="con-item">{{$contact->adresse}} <br> {{$contact->localite}} </p>
+					<p class="con-item">{{$contact->phone}}</p>
+					<p class="con-item">{{$contact->email}}</p>
 				</div>
 				<!-- contact form -->
 				<div class="col-md-6 col-pull">
@@ -34,7 +34,7 @@
 							<div class="col-sm-12">
 								<input type="text" name="subject" placeholder="Subject">
 								<textarea name="message" placeholder="Message"></textarea>
-								<button class="site-btn">send</button>
+								<button class="site-btn">{{$contact->btn}}</button>
 							</div>
 						</div>
 					</form>

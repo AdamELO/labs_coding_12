@@ -95,6 +95,21 @@
                             <i class="w-fa fas fa-concierge-bell text-info"></i>Service
                         </a>
                     </li>
+                    <li>
+                        <a href="/team" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-users green-text"></i>Team
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ready" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-thumbs-up text-info"></i>Mini banner home Ready
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/contact" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-phone green-text"></i>Contact
+                        </a>
+                    </li>
                   </ul>
                 </div>
               </li>
