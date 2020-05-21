@@ -16,9 +16,12 @@
     <!-- Your custom styles (optional) -->
     <!-- Site Icons -->
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+	<link href="/img/favicon.ico" rel="shortcut icon"/>
+
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
     <!-- Pogo Slider CSS -->
     <link rel="stylesheet" href="/css/pogo-slider.min.css">
+    <link rel="stylesheet" href="/css/flaticon.css"/>
     <!-- Site CSS -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- Responsive CSS -->
@@ -85,6 +88,11 @@
                     <li>
                         <a href="/testimonial" class="collapsible-header waves-effect">
                             <i class="w-fa fas fa-comments green-text"></i>Testimonial
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/service" class="collapsible-header waves-effect">
+                            <i class="w-fa fas fa-concierge-bell text-info"></i>Service
                         </a>
                     </li>
                   </ul>

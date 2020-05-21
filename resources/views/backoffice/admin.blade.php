@@ -106,6 +106,25 @@
                 <!-- Card -->
             </div>
             <!-- Grid column -->
+            <div class="col-3 mb-4">
+
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card Data -->
+                    <div class="row mt-3 mb-3">
+                        <div class="col-12 text-center">
+                            <a href="/service" class="btn-floating btn-lg blue accent-2"><i
+                                    class="fas fa-concierge-bell" aria-hidden="true"></i></a>
+                          <h5>Service</h5>
+                        </div>
+                    </div>
+                    <!-- Card Data -->
+                </div>
+                <!-- Card -->
+            </div>
+            <!-- Grid column -->
+
 
             {{-- <div class="col-12 mb-4">
 

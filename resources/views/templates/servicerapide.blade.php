@@ -5,7 +5,7 @@
 		<div class="card-section">
 			<div class="container">
 				<div class="row">
-					@foreach ($services->shuffle()->slice(0,3) as $service)
+					@foreach ($services1->shuffle()->slice(0,3) as $service)
 					<!-- single card -->
 					<div class="col-md-4 col-sm-6">
 						<div class="lab-card">

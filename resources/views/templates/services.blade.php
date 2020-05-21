@@ -1,5 +1,5 @@
 	<!-- Services section -->
-	<div class="services-section spad">
+	<div class="services-section spad" id="service">
 		<div class="container">
 			<div class="section-title dark">
 				<?php
@@ -30,6 +30,7 @@
 			</div>
 			<div class="text-center">
 				<a href="" class="site-btn">Browse</a>
+				{{$services->links()}}
 			</div>
 		</div>
 	</div>

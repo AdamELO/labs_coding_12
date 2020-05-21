@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Service;
+use App\Menu;
+use App\Logo;
+use App\Icon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
 {
@@ -14,7 +18,11 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $icons = Icon::all();
+        $services = Service::paginate(9);
+        $menus = Menu::first();
+        $logo = Logo::first();
+        return view( 'backoffice.service', compact( 'menus','logo','services','icons' ) );
     }
 
     /**
@@ -24,7 +32,10 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        $icons = Icon::all();
+        $menus = Menu::first();
+        $logo = Logo::first();
+        return view( 'create.service',compact('menus','logo','icons'));
     }
 
     /**
@@ -35,7 +46,21 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate( [
+        'description'=>'required',
+        'title'=>'required',
+        'icon_id'=>'required',
+        ], [
+        'description.required'=>'Le champ description est obligatoire.',
+        'title.required'=>'Le champ titre est obligatoire.',
+        'icon_id.required'=>'Veuillez choisir une icon pour ce service .',
+        ] );
+        $service = new Service();
+        $service->icon_id = $request->icon_id;
+        $service->description = $request->description;
+        $service->title = $request->title;
+        $service->save();
+        return redirect()->route( 'service.index' );
     }
 
     /**
@@ -46,7 +71,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +82,10 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        $icons = Icon::all();
+        $menus = Menu::first();
+        $logo = Logo::first();
+        return view( 'edit.service',compact('menus','logo','service','icons'));
     }
 
     /**
@@ -69,7 +97,11 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $service->icon_id = $request->icon_id;
+        $service->description = $request->description;
+        $service->title = $request->title;
+        $service->save();
+        return redirect()->route( 'service.index' );
     }
 
     /**
@@ -80,6 +112,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        //
+        $service->delete();
+        return redirect()->back();
     }
 }
