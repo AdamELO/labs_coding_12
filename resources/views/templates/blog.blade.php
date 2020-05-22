@@ -3,66 +3,28 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-sm-7 blog-posts">
+					@foreach ($articles->sortByDesc('date') as $article)
 					<!-- Post item -->
 					<div class="post-item">
 						<div class="post-thumbnail">
-							<img src="img/blog/blog-2.jpg" alt="">
+							<img src="{{$article->img_article}}" alt="">
 							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
+								<h2>{{date('d', strtotime($article->date)) }}<h2>
+                                <h3>{{date('M Y', strtotime($article->date)) }}</h3>
 							</div>
 						</div>
 						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
+							<h2 class="post-title">{{$article->titre}}</h2>
 							<div class="post-meta">
-								<a href="">Loredana Papp</a>
+								<a href="">{{$article->author->user->name}}</a>
 								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
+								<a href="">{{count($article->commentaires)}} Comments</a>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
-							<a href="blog-post.html" class="read-more">Read More</a>
+							<p>{{\Str::limit($article->text, 400, $end='...') }}</p>
+							<a href="/blog-post/{{$article->id}}" class="read-more">Read More</a>
 						</div>
 					</div>
-					<!-- Post item -->
-					<div class="post-item">
-						<div class="post-thumbnail">
-							<img src="img/blog/blog-1.jpg" alt="">
-							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
-							</div>
-						</div>
-						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
-							<div class="post-meta">
-								<a href="">Loredana Papp</a>
-								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
-							<a href="blog-post.html" class="read-more">Read More</a>
-						</div>
-					</div>
-					<!-- Post item -->
-					<div class="post-item">
-						<div class="post-thumbnail">
-							<img src="img/blog/blog-3.jpg" alt="">
-							<div class="post-date">
-								<h2>03</h2>
-								<h3>Nov 2017</h3>
-							</div>
-						</div>
-						<div class="post-content">
-							<h2 class="post-title">Just a simple blog post</h2>
-							<div class="post-meta">
-								<a href="">Loredana Papp</a>
-								<a href="">Design, Inspiration</a>
-								<a href="">2 Comments</a>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales commodo.</p>
-							<a href="blog-post.html" class="read-more">Read More</a>
-						</div>
-					</div>
+					@endforeach
 					<!-- Pagination -->
 					<div class="page-pagination">
 						<a class="active" href="">01.</a>

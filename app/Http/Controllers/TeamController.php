@@ -116,7 +116,6 @@ class TeamController extends Controller {
         $team->fonction = $request->fonction;
         $team->save();
         return redirect()->route( 'team.index' );
-        // Employee::where('title', 'like', '%' . $myString . '%')->get();
     }
 
     /**

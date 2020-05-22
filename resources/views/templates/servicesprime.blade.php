@@ -86,7 +86,7 @@
 				</div>
 			</div>
 			<div class="text-center mt100">
-				<a href="/blog" class="site-btn">{{$serviceprimbtn->btn}}</a>
+				<a href="/services#blograpide" class="site-btn">{{$serviceprimbtn->btn}}</a>
 			</div>
 		</div>
 	</div>

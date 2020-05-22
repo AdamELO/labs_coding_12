@@ -12,9 +12,13 @@ use App\Presentation;
 use App\Slogan;
 use App\Service;
 use App\Icon;
+use App\User;
+use App\Author;
+use App\Article;
 use App\Team;
 use App\Serviceprim;
 use App\Testimonial;
+use App\Commentaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -45,20 +49,23 @@ class HtmlController extends Controller {
         $titre = Titre::first();
         $logo = Logo::first();
         $menus = Menu::first();
+        $articles = Article::all();
         $serviceprimbtn = Serviceprim::first();
-        return view( 'services', compact( 'menus','logo','services','titre','contact','servicesprime',"serviceprimbtn") );
+        return view( 'services', compact( 'menus','logo','services','titre','contact','servicesprime',"serviceprimbtn",'articles') );
     }
 
     public function blog() {
+        $articles = Article::all();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'blog', compact( 'menus','logo' ) );
+        return view( 'blog', compact( 'menus','logo','articles' ) );
     }
 
-    public function blogpost() {
+    public function blogpost($id) {
+        $article = Article::find($id);
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'blogpost', compact( 'menus','logo' ) );
+        return view( 'blog-post', compact( 'menus','logo','article' ) );
     }
 
     public function contact() {
