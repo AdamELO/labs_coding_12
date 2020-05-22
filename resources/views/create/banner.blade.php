@@ -21,7 +21,7 @@
                     <!-- Collapse buttons -->
                     <div>
                         <a class="btn aqua-gradient" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Cliquez ici si vous voulez changer l'image
+                        Cliquez ici pour Choisir une Image
                         </a>
                     </div>
                     <!-- / Collapse buttons -->
@@ -41,7 +41,7 @@
                     
                     <!-- Grid column -->
                     <div class="text-center">
-                        <button type="submit" class="btn blue-gradient text-center">Editer</button>
+                        <button type="submit" class="btn blue-gradient text-center">Creer</button>
                     </div>
                     <div class="status"></div>
                 </form>

@@ -173,11 +173,26 @@
                           <h5>Contact info</h5>
                         </div>
                     </div>
-                    <!-- Card Data -->
                 </div>
                 <!-- Card -->
             </div>
             <!-- Grid column -->
+            <div class="col-3 mb-4">
+
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card Data -->
+                    <div class="row mt-3 mb-3">
+                        <div class="col-12 text-center">
+                            <a href="/serviceprim" class="btn-floating btn-lg blue accent-2"><i
+                                    class="fab fa-blogger-b" aria-hidden="true"></i></a>
+                          <h5>Services primés btn</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
 
 
             {{-- <div class="col-12 mb-4">

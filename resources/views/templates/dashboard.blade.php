@@ -114,6 +114,25 @@
                 </div>
               </li>
             </ul>
+            <ul class="collapsible collapsible-accordion">
+                <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> {{$menus->lien2}}<i
+                      class="fas fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                    <ul class="list-unstyled">
+                      <li>
+                          <a href="/service" class="collapsible-header waves-effect">
+                              <i class="w-fa fas fa-concierge-bell text-info"></i>Service
+                          </a>
+                      </li>
+                      <li>
+                        <a href="/serviceprim" class="collapsible-header waves-effect">
+                            <i class="w-fa fab fa-blogger-b text-info"></i>Serviceprim btn
+                        </a>
+                    </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
           </li>
         <!-- Side navigation links -->
 

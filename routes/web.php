@@ -40,3 +40,5 @@ Route::resource('/testimonial','TestimonialController');
 Route::resource('/service','ServiceController');
 Route::resource('/ready','ReadyController');
 Route::resource('/contactinfo','ContactController');
+Route::resource('/team','TeamController');
+Route::resource('/serviceprim','ServiceprimController');

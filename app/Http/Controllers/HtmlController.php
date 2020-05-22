@@ -12,6 +12,8 @@ use App\Presentation;
 use App\Slogan;
 use App\Service;
 use App\Icon;
+use App\Team;
+use App\Serviceprim;
 use App\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,26 +23,30 @@ class HtmlController extends Controller {
     public function home() {
         $menus = Menu::first();
         $testimonials = Testimonial::all();
+        $teams = Team::all();
         $logo = Logo::first();
         $titre = Titre::first();
         $slogan = Slogan::first();
         $bannercars = Bannercar::all();
-        $services = Service::Paginate(9);
+        $services = Service::Paginate(9)->fragment('service');
         $services1 = Service::all();
         $ready = Ready::first();
         $presentation = Presentation::first();
         $contact = Contact::first();
-        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation','titre','testimonials','services1','ready','contact' ) );
+        $teams = Team::where('fonction','CEO')->first();
+        $teaams = Team::where('fonction','!=','CEO')->take(2)->inRandomOrder()->get();
+        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation','titre','testimonials','services1','ready','contact','teams','teaams' ) );
     }
 
     public function services() {
         $servicesprime = Service::orderBy('created_at','DESC')->take(6)->get();
-        $services = Service::Paginate(9);
+        $services = Service::Paginate(9)->fragment('service');
         $contact = Contact::first();
         $titre = Titre::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'services', compact( 'menus','logo','services','titre','contact','servicesprime') );
+        $serviceprimbtn = Serviceprim::first();
+        return view( 'services', compact( 'menus','logo','services','titre','contact','servicesprime',"serviceprimbtn") );
     }
 
     public function blog() {

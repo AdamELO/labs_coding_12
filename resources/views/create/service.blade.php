@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn blue-gradient text-center">Editer</button>
+                            <button type="submit" class="btn blue-gradient text-center">Creer</button>
                         </div>
                     </form>
                 </div>
