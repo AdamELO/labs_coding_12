@@ -29,8 +29,10 @@
 				@endforeach
 			</div>
 			<div class="text-center">
+				<div class="page-pagination">
+					{{$services->links()}}
+				</div>
 				<a href="services/#serviceprime" class="site-btn">Browse</a>
-				{{$services->links()}}
 			</div>
 		</div>
 	</div>

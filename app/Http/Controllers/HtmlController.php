@@ -13,12 +13,15 @@ use App\Slogan;
 use App\Service;
 use App\Icon;
 use App\User;
+use App\Tag;
 use App\Author;
 use App\Article;
 use App\Team;
 use App\Serviceprim;
 use App\Testimonial;
 use App\Commentaire;
+use App\Categorie;
+use App\CategorieArticle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -55,10 +58,12 @@ class HtmlController extends Controller {
     }
 
     public function blog() {
-        $articles = Article::all();
+        $articles = Article::Paginate(3);
+        $categories = Categorie::all();
+        $tags = Tag::all();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'blog', compact( 'menus','logo','articles' ) );
+        return view( 'blog', compact( 'menus','logo','articles','tags','categories' ) );
     }
 
     public function blogpost($id) {

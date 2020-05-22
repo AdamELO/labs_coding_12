@@ -39,5 +39,6 @@ class ArticleTableSeeder extends Seeder
             Fusce vel tempus nunc. Phasellus et risus eget sapien suscipit efficitur. Suspendisse iaculis purus ornare urna egestas imperdiet. Nulla congue consectetur placerat. Integer sit amet auctor justo. Pellentesque vel congue velit. Sed ullamcorper lacus scelerisque condimentum convallis. Sed ac mollis sem.",
             "author_id"=>1,
          ]);
+         
     }
 }

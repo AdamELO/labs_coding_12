@@ -52,6 +52,8 @@
             </div>
             @endforeach
         </div>
-        {{$services->links()}}
+        <div class="page-pagination">
+            {{$services->links()}}
+        </div>
     </div>
 @endsection

@@ -29,5 +29,9 @@ class DatabaseSeeder extends Seeder
         $this->call(TeamTableSeeder::class);
         $this->call(ServiceprimTableSeeder::class);
         $this->call(CommentaireTableSeeder::class);
+        $this->call(TagTableSeeder::class);
+        $this->call(CategorieTableSeeder::class);
+        $this->call(CategorieArticleTableSeeder::class);
+        $this->call(TagArticleTableSeeder::class);
     }
 }

@@ -27,9 +27,7 @@
 					@endforeach
 					<!-- Pagination -->
 					<div class="page-pagination">
-						<a class="active" href="">01.</a>
-						<a href="">02.</a>
-						<a href="">03.</a>
+						{{$articles->links()}}
 					</div>
 				</div>
 				<!-- Sidebar area -->
@@ -45,25 +43,18 @@
 					<div class="widget-item">
 						<h2 class="widget-title">Categories</h2>
 						<ul>
-							<li><a href="#">Vestibulum maximus</a></li>
-							<li><a href="#">Nisi eu lobortis pharetra</a></li>
-							<li><a href="#">Orci quam accumsan </a></li>
-							<li><a href="#">Auguen pharetra massa</a></li>
-							<li><a href="#">Tellus ut nulla</a></li>
-							<li><a href="#">Etiam egestas viverra </a></li>
+							@foreach ($categories->sortBy('name') as $cate)
+                            <li><a href="">{{$cate->name}}</a></li>
+                        @endforeach
 						</ul>
 					</div>
 					<!-- Single widget -->
 					<div class="widget-item">
 						<h2 class="widget-title">Tags</h2>
 						<ul class="tag">
-							<li><a href="">branding</a></li>
-							<li><a href="">identity</a></li>
-							<li><a href="">video</a></li>
-							<li><a href="">design</a></li>
-							<li><a href="">inspiration</a></li>
-							<li><a href="">web design</a></li>
-							<li><a href="">photography</a></li>
+							@foreach ($tags->sortBy('name') as $item)
+                            <li><a href="">{{$item->name}}</a></li>
+                        	@endforeach
 						</ul>
 					</div>
 				</div>
