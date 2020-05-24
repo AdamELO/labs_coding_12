@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Footer;
 use App\Http\Controllers\Controller;
 use App\Menu;
 use App\Logo;
@@ -40,8 +41,9 @@ class LoginController extends Controller {
     }
 
     public function showLoginForm() {
+        $footer = Footer::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'auth.login', compact( 'menus','logo') );
+        return view( 'auth.login', compact( 'menus','logo','footer') );
     }
 }

@@ -15,6 +15,7 @@ use App\Icon;
 use App\User;
 use App\Tag;
 use App\Author;
+use App\Footer;
 use App\Article;
 use App\Team;
 use App\Serviceprim;
@@ -29,6 +30,7 @@ use Illuminate\Support\Facades\Redirect;
 class HtmlController extends Controller {
     public function home() {
         $menus = Menu::first();
+        $footer = Footer::first();
         $testimonials = Testimonial::all();
         $teams = Team::all();
         $logo = Logo::first();
@@ -42,10 +44,11 @@ class HtmlController extends Controller {
         $contact = Contact::first();
         $teams = Team::where('fonction','CEO')->first();
         $teaams = Team::where('fonction','!=','CEO')->take(2)->inRandomOrder()->get();
-        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation','titre','testimonials','services1','ready','contact','teams','teaams' ) );
+        return view( 'index', compact( 'menus','bannercars','slogan','logo','services','presentation','titre','testimonials','services1','ready','contact','teams','teaams','footer' ) );
     }
 
     public function services() {
+        $footer = Footer::first();
         $servicesprime = Service::orderBy('created_at','DESC')->take(6)->get();
         $services = Service::Paginate(9)->fragment('service');
         $contact = Contact::first();
@@ -54,7 +57,7 @@ class HtmlController extends Controller {
         $menus = Menu::first();
         $articles = Article::all();
         $serviceprimbtn = Serviceprim::first();
-        return view( 'services', compact( 'menus','logo','services','titre','contact','servicesprime',"serviceprimbtn",'articles') );
+        return view( 'services', compact( 'menus','logo','services','titre','contact','servicesprime',"serviceprimbtn",'articles','footer') );
     }
 
     public function blog() {
@@ -63,21 +66,24 @@ class HtmlController extends Controller {
         $tags = Tag::all();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'blog', compact( 'menus','logo','articles','tags','categories' ) );
+        $footer = Footer::first();
+        return view( 'blog', compact( 'menus','logo','articles','tags','categories','footer' ) );
     }
 
     public function blogpost($id) {
+        $footer = Footer::first();
         $article = Article::find($id);
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'blog-post', compact( 'menus','logo','article' ) );
+        return view( 'blog-post', compact( 'menus','logo','article','footer' ) );
     }
 
     public function contact() {
         $contact = Contact::first();
         $titre = Titre::first();
+        $footer = Footer::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'contact', compact( 'menus','logo','titre','contact' ) );
+        return view( 'contact', compact( 'menus','logo','titre','contact','footer' ) );
     }
 }

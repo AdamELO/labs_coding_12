@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Footer;
 use App\Menu;
 use App\Logo;
 use Illuminate\Http\Request;
@@ -25,8 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $footer = Footer::first();
         $menus = Menu::first();
         $logo = Logo::first();
-        return view('profil',compact('menus','logo'));
+        return view('profil',compact('menus','logo','footer'));
     }
 }

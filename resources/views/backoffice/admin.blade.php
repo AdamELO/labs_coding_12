@@ -193,6 +193,40 @@
                 </div>
                 <!-- Card -->
             </div>
+            <!-- Grid column -->
+            <div class="col-3 mb-4">
+
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card Data -->
+                    <div class="row mt-3 mb-3">
+                        <div class="col-12 text-center">
+                            <a href="/article" class="btn-floating btn-lg green accent-2"><i
+                                class="far fa-newspaper" aria-hidden="true"></i></a>
+                          <h5>Blog</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+            <!-- Grid column -->
+            <div class="col-3 mb-4">
+
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card Data -->
+                    <div class="row mt-3 mb-3">
+                        <div class="col-12 text-center">
+                            <a href="/footer" class="btn-floating btn-lg green accent-2"><i
+                                    class="fas fa-shoe-prints" aria-hidden="true"></i></a>
+                          <h5>Footer</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
 
 
             {{-- <div class="col-12 mb-4">

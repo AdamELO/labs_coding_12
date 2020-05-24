@@ -42,3 +42,4 @@ Route::resource('/ready','ReadyController');
 Route::resource('/contactinfo','ContactController');
 Route::resource('/team','TeamController');
 Route::resource('/serviceprim','ServiceprimController');
+Route::resource('/footer','FooterController');

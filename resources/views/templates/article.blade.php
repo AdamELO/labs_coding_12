@@ -15,8 +15,16 @@
                     <div class="post-content">
                         <h2 class="post-title">{{$article->titre}}</h2>
                         <div class="post-meta">
-                            <a href="">{{$article->author->user->name}}</a>
-                            <a href="">Design, Inspiration</a>
+                            <a href="">
+                                @foreach ($article->categories as $cate)
+                                {{$cate->name}},  
+                                @endforeach
+                            </a>
+                            <a href="">
+                                @foreach ($article->tags as $tag)
+                                {{$tag->name}},
+                                @endforeach
+                            </a>
                             <a href="">{{count($article->commentaires)}} Comments</a>
                         </div>
                        <p>{{$article->text}}</p>
@@ -24,11 +32,11 @@
                     <!-- Post Author -->
                     <div class="author">
                         <div class="avatar">
-                            <img src="/img/avatar/03.jpg" alt="">
+                            <img src="{{$article->author->user->img}}" alt="">
                         </div>
                         <div class="author-info">
                             <h2>{{$article->author->user->name}} <span>{{$article->author->user->role->name}}</span></h2>
-                            <p>Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique. </p>
+                            <p>{{$article->author->description}}</p>
                         </div>
                     </div>
                     <!-- Post Comments -->

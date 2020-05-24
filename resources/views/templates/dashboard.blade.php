@@ -53,8 +53,22 @@
         <li>
             <ul>
                 <li>
-                    <a href="/admin" class="collapsible-header waves-effect">
-                        <i class="w-fa fas fa-tools"></i> Admin Dashboard
+                    <a href="/admin" class="collapsible-header waves-effect list-style-none text-dark">
+                        <i class="w-fa fas fa-tools text-info"></i> Admin Dashboard
+                    </a>
+                </li>
+            </ul>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="/titre" class="collapsible-header waves-effect list-style-none text-dark">
+                        <i class="w-fa fas fa-heading green-text"></i> Titre section
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="/menu" class="collapsible-header waves-effect list-style-none text-dark">
+                        <i class="w-fa fas fa-bars text-info"></i> Menu
                     </a>
                 </li>
             </ul>
@@ -65,16 +79,6 @@
                     class="fas fa-angle-down rotate-icon"></i></a>
                 <div class="collapsible-body">
                   <ul class="list-unstyled">
-                    <li>
-                        <a href="/titre" class="collapsible-header waves-effect">
-                            <i class="w-fa fas fa-heading green-text"></i>Titre section
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/menu" class="collapsible-header waves-effect">
-                            <i class="w-fa fas fa-bars text-info"></i>Menu
-                        </a>
-                    </li>
                     <li>
                         <a href="/banner" class="collapsible-header waves-effect">
                             <i class="w-fa fas fa-window-maximize green-text"></i>Banner
@@ -132,7 +136,28 @@
                     </ul>
                   </div>
                 </li>
-              </ul>
+            </ul>
+            <ul class="collapsible collapsible-accordion">
+                <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> {{$menus->lien3}}<i
+                      class="fas fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                    <ul class="list-unstyled">
+                      <li>
+                          <a href="/article" class="collapsible-header waves-effect">
+                              <i class="w-fa fas fa-concierge-bell green-text"></i>Blog
+                          </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+            </ul>
+            <ul class="mt-2">
+                <li>
+                    <a href="/footer" class="collapsible-header waves-effect list-style-none text-dark">
+                        <i class="w-fa fas fa-shoe-prints green-text"></i>&nbsp; Footer
+                    </a>
+                </li>
+            </ul>
           </li>
         <!-- Side navigation links -->
 

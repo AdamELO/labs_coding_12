@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Footer;
 use App\Http\Controllers\Controller;
 use App\Menu;
 use App\Providers\RouteServiceProvider;
@@ -80,8 +81,9 @@ class RegisterController extends Controller
         ]);
     }
     public function showRegistrationForm() {
+        $footer = Footer::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'auth.register', compact( 'menus','logo' ) );
+        return view( 'auth.register', compact( 'menus','logo','footer' ) );
     }
 }
