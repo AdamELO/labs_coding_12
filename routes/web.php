@@ -43,3 +43,5 @@ Route::resource('/contactinfo','ContactController');
 Route::resource('/team','TeamController');
 Route::resource('/serviceprim','ServiceprimController');
 Route::resource('/footer','FooterController');
+Route::resource('/article','ArticleController');
+Route::get('/search', 'HtmlController@search');

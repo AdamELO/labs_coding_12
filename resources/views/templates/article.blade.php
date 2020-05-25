@@ -6,7 +6,11 @@
                 <!-- Single Post -->
                 <div class="single-post">
                     <div class="post-thumbnail">
-                        <img src="{{$article->img_article}}" alt="">
+                        @if (Storage::disk('public')->has($article->img_article))
+                            <img src={{asset('storage/'.$article->img_article)}} alt="">
+                        @else
+                            <img src="{{$article->img_article}}" alt="">
+                        @endif
                         <div class="post-date">
                             <h2>{{date('d', strtotime($article->date)) }}<h2>
                                 <h3>{{date('M Y', strtotime($article->date)) }}</h3>
@@ -16,12 +20,12 @@
                         <h2 class="post-title">{{$article->titre}}</h2>
                         <div class="post-meta">
                             <a href="">
-                                @foreach ($article->categories as $cate)
-                                {{$cate->name}},  
+                                @foreach ($article->categories->shuffle()->splice(0,1) as $cate)
+                                {{$cate->name}}  
                                 @endforeach
                             </a>
                             <a href="">
-                                @foreach ($article->tags as $tag)
+                                @foreach ($article->tags->shuffle()->splice(0,3) as $tag)
                                 {{$tag->name}},
                                 @endforeach
                             </a>
@@ -32,7 +36,7 @@
                     <!-- Post Author -->
                     <div class="author">
                         <div class="avatar">
-                            <img src="{{$article->author->user->img}}" alt="">
+                            {{-- <img src="{{$article->author->user->img}}" alt=""> --}}
                         </div>
                         <div class="author-info">
                             <h2>{{$article->author->user->name}} <span>{{$article->author->user->role->name}}</span></h2>
@@ -58,37 +62,41 @@
                         </ul>
                     </div>
                     <!-- Commert Form -->
-                    <div class="row">
-                        <div class="col-md-9 comment-from">
-                            <h2>Leave a comment</h2>
-                            <form class="form-class">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <input type="text" name="name" placeholder="Your name">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" name="email" placeholder="Your email">
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <input type="text" name="subject" placeholder="Subject">
-                                        <textarea name="message" placeholder="Message"></textarea>
-                                        <button class="site-btn">send</button>
-                                    </div>
+                    @if (Auth::check())
+                            <div class="row">
+                                <div class="col-md-9 comment-from">
+                                    <h2>Leave a comment</h2>
+                                    <form class="form-class">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <input type="text" name="name" placeholder="Your name">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" name="email" placeholder="Your email">
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <input type="text" name="subject" placeholder="Subject">
+                                                <textarea name="message" placeholder="Message"></textarea>
+                                                <button class="site-btn">send</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
+                            </div>
+                        @else
+                            <a class="btn btn-info" href="/login">Veuillez vous connectez !</a>
+                        @endif
                 </div>
             </div>
             <!-- Sidebar area -->
             <div class="col-md-4 col-sm-5 sidebar">
                 <!-- Single widget -->
-                <div class="widget-item">
+                {{-- <div class="widget-item">
                     <form action="#" class="search-form">
                         <input type="text" placeholder="Search">
                         <button class="search-btn"><i class="flaticon-026-search"></i></button>
                     </form>
-                </div>
+                </div> --}}
                 <!-- Single widget -->
                 <div class="widget-item">
                     <h2 class="widget-title">Categories</h2>
