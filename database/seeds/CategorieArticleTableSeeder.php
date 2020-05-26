@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategorieArticleTableSeeder extends Seeder {
     /**
@@ -36,15 +37,15 @@ class CategorieArticleTableSeeder extends Seeder {
         ] );
         DB::table( 'categorie_articles' )->insert( [
             'article_id' => 3,
-            'categorie_id' => 5,
+            'categorie_id' => 6,
+        ] );
+        DB::table( 'categorie_articles' )->insert( [
+            'article_id' => 3,
+            'categorie_id' => 2,
         ] );
         DB::table( 'categorie_articles' )->insert( [
             'article_id' => 3,
             'categorie_id' => 4,
-        ] );
-        DB::table( 'categorie_articles' )->insert( [
-            'article_id' => 3,
-            'categorie_id' => 1,
         ] );
     }
 }

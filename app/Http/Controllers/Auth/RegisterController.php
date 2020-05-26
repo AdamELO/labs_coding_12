@@ -8,8 +8,10 @@ use App\Menu;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use App\Logo;
+use App\Mail\Welcome;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -73,12 +75,14 @@ class RegisterController extends Controller
         } else {
             $roleId = 4;
         }
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role_id' => $roleId,
         ]);
+        Mail::to($user->email)->send(new Welcome($data));
+        return $user;
     }
     public function showRegistrationForm() {
         $footer = Footer::first();

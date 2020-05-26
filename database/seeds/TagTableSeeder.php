@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TagTableSeeder extends Seeder {
     /**
@@ -26,7 +27,7 @@ class TagTableSeeder extends Seeder {
             'name' => 'inspiration',
         ] );
         DB::table( 'tags' )->insert( [
-            'name' => 'web design',
+            'name' => 'web-design',
         ] );
         DB::table( 'tags' )->insert( [
             'name' => 'photography',

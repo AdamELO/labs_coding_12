@@ -14,7 +14,6 @@ use App\Service;
 use App\Icon;
 use App\User;
 use App\Tag;
-use App\Author;
 use App\Footer;
 use App\Article;
 use App\Team;
@@ -61,7 +60,7 @@ class HtmlController extends Controller {
     }
 
     public function blog(Request $request) {
-        $articles = Article::Paginate( 3 );
+        $articles = Article::where( 'accept', '=', 'checked' )->orderBy('created_at','DESC')->Paginate( 3 );
         $categories = Categorie::all();
         $tags = Tag::all();
         $logo = Logo::first();

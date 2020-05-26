@@ -3,6 +3,7 @@
     <div class="container-fluid">
         <section class="section card mb-5">
             <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Create article</h2>
+            <p class="text-center">Auteur : {{Auth::user()->name}}</p>
             <h4 class="text-center my-4">Ps: Pour les tags et catégories vous pouvez en choisir plusieurs en faisant ctrl+click </h4>
             <div class="row">
                 <div class="col-md-12 mb-md-0 mb-5">
@@ -28,16 +29,6 @@
                                     <input type="date" id="email" name="date"
                                         class="form-control">
                                     <label for="email">Date </label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="md-form mb-0">
-                                    <p>Auteur : vous</p>
-                                    <select name='author' class="browser-default disabled custom-select">
-                                        <option value='{{Auth::id()}}'>
-                                            {{Auth::user()->name}}
-                                        </option>
-                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -71,13 +62,23 @@
                                     <label for="form10">Text</label>
                                   </div>
                             </div>
-                            
-                            <!-- Collapsible element -->
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <input  type="file" name="img" class="form-control-file green-text" id="exampleFormControlFile1">
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <div class="form-group">
+                                        <input  type="file" name="img" class="form-control-file green-text" id="exampleFormControlFile1">
+                                    </div>
                                 </div>
                             </div>
+                            @Webmaster
+                            <div class="col-md-12">
+                                <div class="md-form text-center">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="test" class="form-check-input" id="materialUnchecked">
+                                        <label class="form-check-label" for="materialUnchecked">Publier l'article</label>
+                                    </div>
+                                </div>
+                            </div>
+                            @endWebmaster
                         <div class="text-center">
                             <button type="submit" class="btn blue-gradient text-center">Editer</button>
                         </div>

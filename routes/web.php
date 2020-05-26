@@ -45,3 +45,4 @@ Route::resource('/serviceprim','ServiceprimController');
 Route::resource('/footer','FooterController');
 Route::resource('/article','ArticleController');
 Route::get('/search', 'HtmlController@search');
+Route::post('/blog-post/{id}','CommentaireController@store');
