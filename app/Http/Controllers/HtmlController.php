@@ -22,6 +22,7 @@ use App\Testimonial;
 use App\Commentaire;
 use App\Categorie;
 use App\CategorieArticle;
+use App\Google;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -84,7 +85,8 @@ class HtmlController extends Controller {
         $footer = Footer::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'contact', compact( 'menus', 'logo', 'titre', 'contact', 'footer' ) );
+        $google = Google::first();
+        return view( 'contact', compact( 'menus', 'logo', 'titre', 'contact', 'footer','google' ) );
     }
 
     public function search( Request $request ) {

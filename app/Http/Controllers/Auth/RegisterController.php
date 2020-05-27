@@ -13,10 +13,11 @@ use App\Newsletter;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class RegisterController extends Controller
-{
+class RegisterController extends Controller {
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -31,65 +32,75 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
+    * Where to redirect users after registration.
+    *
+    * @var string
+    */
     protected $redirectTo = '/profil';
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
+    * Create a new controller instance.
+    *
+    * @return void
+    */
+
+    public function __construct() {
+        $this->middleware( 'guest' );
     }
 
     /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
+    * Get a validator for an incoming registration request.
+    *
+    * @param  array  $data
+    * @return \Illuminate\Contracts\Validation\Validator
+    */
+    protected function validator( array $data ) {
+        return Validator::make( $data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            // 'img' => 'required',
+        ] );
     }
 
     /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
-    {
+    * Create a new user instance after a valid registration.
+    *
+    * @param  array  $data
+    * @return \App\User
+    */
+    protected function create( array $data ) {
         $users = User::all();
-        if (count($users)== 0) {
+        if ( count( $users ) == 0 ) {
             $roleId = 1;
         } else {
             $roleId = 4;
         }
-        $user = User::create([
+        $user = User::create( [
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make( $data['password'] ),
             'role_id' => $roleId,
-        ]);
-        Mail::to($user->email)->send(new Welcome($data));
-        Newsletter::where('email','=',$user->email)->delete();
+        ] );
+
+        // $newName = Storage::disk( 'public' )->put( '', $data['img'] );
+        // $user->update( ['img' => $newName] );
+
+        // if ( request()->hasfile( 'img' ) ) {
+        //     $img = request()->file( 'img' )->getClientOriginalName();
+        //     request()->file( 'img' )->storeAs( 'imgs', $user->id . '/' . $img );
+        //     $user->update( ['img' => $img] );
+        // }
+
+        Mail::to( $user->email )->send( new Welcome( $data ) );
+        Newsletter::where( 'email', '=', $user->email )->delete();
         return $user;
     }
+
     public function showRegistrationForm() {
         $footer = Footer::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        return view( 'auth.register', compact( 'menus','logo','footer' ) );
+        return view( 'auth.register', compact( 'menus', 'logo', 'footer' ) );
     }
 }

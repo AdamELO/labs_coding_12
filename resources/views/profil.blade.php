@@ -26,13 +26,6 @@
                         </div>
                     @endif
                     <h2>Bonjour {{Auth::user()->name}}</h2>
-                    {{-- <h4>Voici votre rôle : {{Auth::user()->role->name}}</h4>
-                    @Admin
-                        <a class="btn btn-success" href="{{ url('/admin') }}">Acceder au Dashboard de l'admin</a>
-                    @endAdmin
-                    @if (Auth::user()->role_id != 1)
-                        <p>Comme vous n'êtes pas Admin vous ne pouvez rien modifier <br> merci de vous être inscrit quand même</p>
-                    @endif --}}
                 </div>
             </div>
         </div>
