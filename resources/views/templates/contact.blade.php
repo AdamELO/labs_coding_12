@@ -23,7 +23,20 @@
 				</div>
 				<!-- contact form -->
 				<div class="col-md-6 col-pull">
-					<form class="form-class" id="con_form">
+					@if ($errors->any())
+					<div class='alert alert-danger'>
+					@foreach ($errors->all() as $error)
+						<p>{{  $error  }}</p>
+					@endforeach
+					</div>
+					@enderror
+					@if(\Session::has('success'))
+					<div class='alert alert-success text-center'>
+						{{\Session::get('success')}}
+					</div>
+					@endif
+				<form action="{{route('mail.store')}}" method="POST" class="form-class" id="con_form">
+					@csrf
 						<div class="row">
 							<div class="col-sm-6">
 								<input type="text" name="name" placeholder="Your name">

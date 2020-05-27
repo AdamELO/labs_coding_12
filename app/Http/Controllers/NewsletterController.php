@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Events\UserRegisterNewsletterEvent;
+use App\Logo;
+use App\Menu;
 use App\Newsletter;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
@@ -16,7 +19,11 @@ class NewsletterController extends Controller {
     */
 
     public function index() {
-        //
+        $menus = Menu::first();
+        $logo = Logo::first();
+        $users = User::all();
+        $newsletters = Newsletter::all();
+        return view( 'backoffice.newsletter', compact( 'menus','logo','users','newsletters' ) );
     }
 
     /**

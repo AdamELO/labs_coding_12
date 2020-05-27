@@ -210,6 +210,54 @@
                 </div>
                 <!-- Card -->
             </div>
+            <div class="col-3 mb-4">
+
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card Data -->
+                    <div class="row mt-3 mb-3">
+                        <div class="col-12 text-center">
+                            <a href="/newsletter" class="btn-floating btn-lg blue accent-2"><i
+                                    class="fas fa-mail-bulk" aria-hidden="true"></i></a>
+                          <h5>Newsletter</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+            <div class="col-3 mb-4">
+
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card Data -->
+                    <div class="row mt-3 mb-3">
+                        <div class="col-12 text-center">
+                            <a href="/mail" class="btn-floating btn-lg green accent-2"><i
+                                    class="fas fa-envelope" aria-hidden="true"></i></a>
+                          <h5>Mail</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
+            <div class="col-3 mb-4">
+
+                <!-- Card -->
+                <div class="card">
+
+                    <!-- Card Data -->
+                    <div class="row mt-3 mb-3">
+                        <div class="col-12 text-center">
+                            <a href="/googlemaps" class="btn-floating btn-lg blue accent-2"><i
+                                    class="fas fa-map-marked-alt" aria-hidden="true"></i></a>
+                          <h5>Google maps</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+            </div>
             <!-- Grid column -->
             <div class="col-3 mb-4">
 

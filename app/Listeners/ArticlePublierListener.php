@@ -31,18 +31,18 @@ class ArticlePublierListener
     public function handle($event)
     {
         $newsletters = Newsletter::all();
-        // foreach ($newsletters as $news) {
-        //     $users = User::where('email', '!=', $news->email);
-
-        // }
         $users = User::all();
-
-        foreach ($newsletters as $newsletter) {
-            Mail::to($newsletter->email)->send(new NewsArticle($event->article));
-        }
+        $i =1;
+        
         foreach ($users as $user) {
-            Mail::to($user->email)->send(new NewsArticle2($event->article, $user));
+            $when = now()->addSeconds($i * 5);
+            Mail::to($user->email)->later($when, new NewsArticle2($event->article, $user));
+            $i++;
         }
-
+        foreach ($newsletters as $newsletter) {
+            $when = now()->addSeconds($i * 5);
+            Mail::to($newsletter->email)->later($when, new NewsArticle($event->article));
+            $i++;
+        }
     }
 }

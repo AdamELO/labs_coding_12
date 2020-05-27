@@ -9,6 +9,7 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use App\Logo;
 use App\Mail\Welcome;
+use App\Newsletter;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -82,6 +83,7 @@ class RegisterController extends Controller
             'role_id' => $roleId,
         ]);
         Mail::to($user->email)->send(new Welcome($data));
+        Newsletter::where('email','=',$user->email)->delete();
         return $user;
     }
     public function showRegistrationForm() {

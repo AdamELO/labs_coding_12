@@ -16,6 +16,7 @@ class UserSeeder extends Seeder {
             'email' => 'projet12codingschool@gmail.com',
             'password' => bcrypt( 'projet.codingschool@gmail.com' ),
             'role_id' => 1,
+            'img'=>'/img/logo.jpg',
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [
@@ -40,7 +41,7 @@ class UserSeeder extends Seeder {
             'email'=> 'member@example.com',
             'password'=> bcrypt( 'member@example.com' ),
             'role_id' => 4,
-            'img'=>'/img/avatar/03.jpg',
+            'img'=>'/img/logo.jpg',
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [

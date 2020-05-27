@@ -151,6 +151,34 @@
                   </div>
                 </li>
             </ul>
+            <ul class="collapsible collapsible-accordion">
+                <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> {{$menus->lien4}}<i
+                      class="fas fa-angle-down rotate-icon"></i></a>
+                  <div class="collapsible-body">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/googlmaps" class="collapsible-header waves-effect list-style-none text-dark">
+                                <i class="w-fa fas fa-map-marked-alt text-info"></i>Google Maps
+                            </a>
+                        </li>
+                    </ul>
+                  </div>
+                </li>
+            </ul>
+            <ul class="mt-2">
+                <li>
+                    <a href="/newsletter" class="collapsible-header waves-effect list-style-none text-dark">
+                        <i class="w-fa fas fa-mail-bulk text-info"></i>&nbsp; Newsletter
+                    </a>
+                </li>
+            </ul>
+            <ul class="mt-2">
+                <li>
+                    <a href="/mail" class="collapsible-header waves-effect list-style-none text-dark">
+                        <i class="w-fa fas fa-envelope green-text"></i>&nbsp; Mail
+                    </a>
+                </li>
+            </ul>
             <ul class="mt-2">
                 <li>
                     <a href="/footer" class="collapsible-header waves-effect list-style-none text-dark">

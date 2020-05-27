@@ -7,6 +7,7 @@
             <a class="btn-floating btn-lg dusty-grass-gradient text-white" href='team/create'>
                 <i class="fas fa-plus text-white"></i>
             </a>
+            <p class="text-center">PS: Il ne peut y avoir qu'un seul CEO , si il y'en a plusieurs seulement le premier creer sera visible dans la section team de Home</p>
         </div>
         <div class="row">
             @foreach ($teams as $team)

@@ -44,8 +44,8 @@ Route::resource('/team','TeamController');
 Route::resource('/serviceprim','ServiceprimController');
 Route::resource('/footer','FooterController');
 Route::resource('/article','ArticleController');
+Route::resource('/mail','MailController');
+// Route::resource('/googlemaps','GooglemapsController');
 Route::get('/search', 'HtmlController@search');
 Route::post('/blog-post/{id}','CommentaireController@store');
-
-// newsletter
 Route::resource('/newsletter','NewsletterController');

@@ -29,13 +29,18 @@
 				<!-- single member -->
 				<div class="col-sm-4">
 					<div class="member">
-						@if (Storage::disk('public')->has($teams->img))
-						<img src={{asset('storage/'.$teams->img)}} alt="">
-						@else 
-							<img src="{{$teams->img}}" alt="">
+						@if (isset($teams))
+							@if (Storage::disk('public')->has($teams->img))
+							<img src={{asset('storage/'.$teams->img)}} alt="">
+							@else 
+								<img src="{{$teams->img}}" alt="">
+							@endif
+							<h2>{{$teams->prename}} <span>{{$teams->name}}</span></h2>
+							<h3>{{$teams->fonction}}</h3>
+						@else
+							<img height="448px" src="/img/logo.jpg" alt="">
+							<h2>Personne avec la fonction CEO n'a été trouvé</h2>
 						@endif
-						<h2>{{$teams->prename}} <span>{{$teams->name}}</span></h2>
-						<h3>{{$teams->fonction}}</h3>
 					</div>
 				</div>
 				<!-- single member -->

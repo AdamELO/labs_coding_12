@@ -3,6 +3,7 @@
     <div class="container-fluid">
         <section class="section card mb-5">
             <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Edit Team Mate</h2>
+            <p class="text-center">PS: Pour CEO il faut l'écrire en majuscule</p>
             <div class="row">
                 @if ($errors->any())
                 <div class='alert alert-danger'>

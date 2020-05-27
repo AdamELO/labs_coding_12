@@ -4,7 +4,6 @@
         <section class="section card mb-5">
             <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Edit Services primés btn</h2>
             <div class="row">
-
                 <div class="col-md-12 mb-md-0 mb-5">
                     <form id="contact-form" class="container" action='{{ route('serviceprim.update',$serviceprim) }}' method="post">
                         @csrf
