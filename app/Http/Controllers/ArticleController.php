@@ -6,6 +6,7 @@ use App\Article;
 use App\Author;
 use App\Categorie;
 use App\CategorieArticle;
+use App\Events\ArticlePublierEvent;
 use App\Logo;
 use App\Menu;
 use App\Tag;
@@ -89,6 +90,12 @@ class ArticleController extends Controller {
         $article->save();
         $article->categories()->attach( $request->cate );
         $article->tags()->attach( $request->tags );
+        if (Auth::user()->role_id == 2) {
+            if (isset( $_POST['test'] )) {
+                event(new ArticlePublierEvent($article));
+            }
+        }
+
         return redirect()->route( 'article.index' );
     }
 
@@ -150,6 +157,11 @@ class ArticleController extends Controller {
         $article->tags()->sync( $request->tags );
         $article->categories()->sync( $request->cate );
         $article->save();
+        if (Auth::user()->role_id == 2) {
+            if (isset( $_POST['test'] )) {
+                event(new ArticlePublierEvent($article));
+            }
+        }
         return redirect()->route( 'article.index' );
     }
 

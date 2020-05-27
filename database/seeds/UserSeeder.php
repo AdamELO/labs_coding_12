@@ -13,7 +13,7 @@ class UserSeeder extends Seeder {
     public function run() {
         DB::table( 'users' )->insert( [
             'name' => 'The Labs',
-            'email' => 'projet.codingschool@gmail.com',
+            'email' => 'projet12codingschool@gmail.com',
             'password' => bcrypt( 'projet.codingschool@gmail.com' ),
             'role_id' => 1,
             'created_at' => now()

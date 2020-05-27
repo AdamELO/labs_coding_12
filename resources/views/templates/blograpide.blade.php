@@ -3,7 +3,7 @@
 		<div id="blograpide" class="container">
 			<div class="row">
 				<!-- Single Card -->
-				@foreach ($articles->sortByDesc('date') as $article)
+				@foreach ($articles->sortByDesc('created_at')->splice(0,3) as $article)
                 <div class="col-md-4 col-sm-6">
                     <div class="sv-card">
                         <div class="card-img">
