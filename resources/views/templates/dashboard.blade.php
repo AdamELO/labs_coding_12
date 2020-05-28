@@ -164,7 +164,7 @@
                   <div class="collapsible-body">
                     <ul class="list-unstyled">
                         <li>
-                            <a href="/googlmaps" class="collapsible-header waves-effect list-style-none text-dark">
+                            <a href="/googlemaps" class="collapsible-header waves-effect list-style-none text-dark">
                                 <i class="w-fa fas fa-map-marked-alt text-info"></i>Google Maps
                             </a>
                         </li>

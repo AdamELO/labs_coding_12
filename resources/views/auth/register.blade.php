@@ -108,15 +108,10 @@
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br><br>
 @endsection
-@section('footer')
+{{-- @section('footer')
    @include('templates.footer')
-@endsection
+@endsection --}}
 @section('script')
    @include('templates.script')
 @endsection

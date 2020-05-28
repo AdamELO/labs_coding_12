@@ -28,11 +28,6 @@
                     <h2 class="text-center mb-2">Bonjour {{Auth::user()->name}}</h2>
                     <div class="row">
                         <div class="col">
-                            @error('refused')
-                            <div class='alert alert-danger'>
-                                {{$message}}
-                            </div>
-                            @enderror
                             @if ($errors->any())
                             <div class='alert alert-danger'>
                             @foreach ($errors->all() as $error)
@@ -107,20 +102,10 @@
         </div>
     </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br><br><br>
-<br>
 @endsection
-@section('footer')
+{{-- @section('footer')
    @include('templates.footer')
-@endsection
+@endsection --}}
 @section('script')
    @include('templates.script')
 @endsection

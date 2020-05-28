@@ -45,7 +45,7 @@ Route::resource('/team','TeamController')->middleware(['auth','isWebmaster']);
 Route::resource('/serviceprim','ServiceprimController')->middleware(['auth','isAdminmaster']);
 Route::resource('/footer','FooterController')->middleware(['auth','isAdminmaster']);
 Route::resource('/article','ArticleController')->middleware(['auth','isNotMember']);
-Route::resource('/mail','MailController')->middleware(['auth','isAdminmaster']);
+Route::resource('/mail','MailController');
 Route::resource('/googlemaps','GoogleController')->middleware(['auth','isAdminmaster']);
 Route::get('/search', 'HtmlController@search');
 Route::post('/blog-post/{id}','CommentaireController@store')->middleware('auth');

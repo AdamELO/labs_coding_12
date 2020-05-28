@@ -55,7 +55,7 @@ class HtmlController extends Controller {
         $titre = Titre::first();
         $logo = Logo::first();
         $menus = Menu::first();
-        $articles = Article::all();
+        $articles = Article::where( 'accept', '=', 'checked' )->get();
         $serviceprimbtn = Serviceprim::first();
         return view( 'services', compact( 'menus', 'logo', 'services', 'titre', 'contact', 'servicesprime', 'serviceprimbtn', 'articles', 'footer' ) );
     }

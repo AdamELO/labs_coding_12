@@ -12,8 +12,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+	<script src="{{ asset('js/app.js') }}" defer></script>
+	<link href="/img/favicon.ico" rel="shortcut icon"/>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -50,9 +50,9 @@
 </head>
 <body>
 	<!-- Page Preloder -->
-	{{-- <div id="preloder">
+	<div id="preloder">
 		<div class="loader">
 			<img src="/img/logo.png" alt="">
 			<h2>Loading.....</h2>
 		</div>
-	</div> --}}
+	</div>

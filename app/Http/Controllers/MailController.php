@@ -16,6 +16,10 @@ class MailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(){
+        $this->middleware(['auth','isAdminmaster'])->only('index', 'show');
+    }
     public function index()
     {
         $menus = Menu::first();

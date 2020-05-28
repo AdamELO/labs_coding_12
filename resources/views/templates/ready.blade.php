@@ -8,7 +8,7 @@
 				</div>
 				<div class="col-md-3">
 					<div class="promo-btn-area">
-						<a href="" class="site-btn btn-2">{{$ready->btn}}</a>
+						<a href="/contact" class="site-btn btn-2">{{$ready->btn}}</a>
 					</div>
 				</div>
 			</div>
