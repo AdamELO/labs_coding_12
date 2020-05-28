@@ -54,9 +54,8 @@ class NewsletterController extends Controller {
         $newsletter = Newsletter::create( [
             'email' => $request->email,
         ] );
-
         event( new UserRegisterNewsletterEvent( $newsletter ) );
-        return Redirect::to(URL::previous() . "#newsletter")->with( 'success', 'Merci de vous être inscrit à la Newsletter' );
+        return Redirect::to(URL::previous() . "#newsletter")->with( 'succes', 'Merci de vous être inscrit à la Newsletter' );
     }
 
     /**
