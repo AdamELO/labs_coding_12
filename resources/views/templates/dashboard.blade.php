@@ -58,6 +58,7 @@
                     </a>
                 </li>
             </ul>
+            @Adminmaster
             <ul class="list-unstyled">
                 <li>
                     <a href="/titre" class="collapsible-header waves-effect list-style-none text-dark">
@@ -72,7 +73,9 @@
                     </a>
                 </li>
             </ul>
+            @endAdminmaster
         </li>
+        @Adminmaster
         <li>
             <ul class="collapsible collapsible-accordion">
               <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> {{$menus->lien1}}<i
@@ -99,11 +102,13 @@
                             <i class="w-fa fas fa-concierge-bell text-info"></i>Service
                         </a>
                     </li>
+                    @Webmaster
                     <li>
                         <a href="/team" class="collapsible-header waves-effect">
                             <i class="w-fa fas fa-users green-text"></i>Team
                         </a>
                     </li>
+                    @endWebmaster
                     <li>
                         <a href="/ready" class="collapsible-header waves-effect">
                             <i class="w-fa fas fa-thumbs-up text-info"></i>Mini banner home Ready
@@ -137,6 +142,7 @@
                   </div>
                 </li>
             </ul>
+            @endAdminmaster
             <ul class="collapsible collapsible-accordion">
                 <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> {{$menus->lien3}}<i
                       class="fas fa-angle-down rotate-icon"></i></a>
@@ -144,13 +150,14 @@
                     <ul class="list-unstyled">
                       <li>
                           <a href="/article" class="collapsible-header waves-effect">
-                              <i class="w-fa fas fa-concierge-bell green-text"></i>Blog
+                              <i class="w-fa far fa-newspaper green-text"></i>Blog Article
                           </a>
                       </li>
                     </ul>
                   </div>
                 </li>
             </ul>
+            @Adminmaster
             <ul class="collapsible collapsible-accordion">
                 <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> {{$menus->lien4}}<i
                       class="fas fa-angle-down rotate-icon"></i></a>
@@ -186,6 +193,7 @@
                     </a>
                 </li>
             </ul>
+            @endAdminmaster
           </li>
         <!-- Side navigation links -->
 

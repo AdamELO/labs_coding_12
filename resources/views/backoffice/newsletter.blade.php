@@ -12,7 +12,6 @@
                     @foreach ($newsletters as $newsletter)
                         <p class="border">{{$newsletter->email}}</p> 
                     @endforeach
-    
                 </div>
                 <div class="col-md-6 text-center">
                     <h5 class="mb-2" >Membres inscrit à la newsletter (<strong>{{count($users)}}</strong>)</h5 >

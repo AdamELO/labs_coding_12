@@ -5,7 +5,7 @@
 
         <!-- Grid row -->
         <div class="row">
-
+            @Adminmaster
             <!-- Grid column -->
             <div class="col-3 mb-4">
 
@@ -123,6 +123,7 @@
                 </div>
                 <!-- Card -->
             </div>
+            @Webmaster
             <!-- Grid column -->
             <div class="col-3 mb-4">
 
@@ -142,6 +143,7 @@
                 <!-- Card -->
             </div>
             <!-- Grid column -->
+            @endWebmaster
             <div class="col-3 mb-4">
 
                 <!-- Card -->
@@ -193,6 +195,7 @@
                 </div>
                 <!-- Card -->
             </div>
+            @endAdminmaster
             <!-- Grid column -->
             <div class="col-3 mb-4">
 
@@ -204,12 +207,13 @@
                         <div class="col-12 text-center">
                             <a href="/article" class="btn-floating btn-lg green accent-2"><i
                                 class="far fa-newspaper" aria-hidden="true"></i></a>
-                          <h5>Blog</h5>
+                          <h5>Blog Article</h5>
                         </div>
                     </div>
                 </div>
                 <!-- Card -->
             </div>
+            @Adminmaster
             <div class="col-3 mb-4">
 
                 <!-- Card -->
@@ -275,7 +279,7 @@
                 </div>
                 <!-- Card -->
             </div>
-
+            @endAdminmaster
 
             {{-- <div class="col-12 mb-4">
 

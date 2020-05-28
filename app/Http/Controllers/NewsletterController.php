@@ -17,6 +17,10 @@ class NewsletterController extends Controller {
     *
     * @return \Illuminate\Http\Response
     */
+    public function __construct() {
+    $this->middleware( 'auth' )->only('index');
+    $this->middleware( 'isAdminmaster' )->only( 'index' );
+    }
 
     public function index() {
         $menus = Menu::first();

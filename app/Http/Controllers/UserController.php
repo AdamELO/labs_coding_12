@@ -82,7 +82,7 @@ class UserController extends Controller {
         $user = User::find( $id );
         $img = $_POST['img'];
         if ( isset( $_POST['img'] ) ) {
-            // Storage::disk( 'public' )->delete( $user->img );
+            Storage::disk( 'public' )->delete( $user->img );
             $newName = Storage::disk( 'public' )->put( '', $img );
             $user->img = $newName;
         }
