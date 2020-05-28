@@ -28,6 +28,11 @@
                     <h2 class="text-center mb-2">Bonjour {{Auth::user()->name}}</h2>
                     <div class="row">
                         <div class="col">
+                            @error('refused')
+                            <div class='alert alert-danger'>
+                                {{$message}}
+                            </div>
+                            @enderror
                             @if ($errors->any())
                             <div class='alert alert-danger'>
                             @foreach ($errors->all() as $error)
@@ -59,7 +64,7 @@
                                     <label for="form10">Description profil</label>
                                     <textarea id="form10" class="form-control" name="description" rows="3">{{Auth::user()->description}}</textarea>
                                 </div>
-                                <!-- Collapse buttons -->
+                                {{-- <!-- Collapse buttons -->
                                 <div>
                                     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Cliquez ici si vous voulez changer l'image
@@ -76,7 +81,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <button type="submit" class="btn btn-primary mt-5">Editer</button>
                               </form>
                         </div>

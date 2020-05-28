@@ -20,6 +20,13 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
+                        @if ($errors->any())
+                        <div class='alert alert-danger'>
+                        @foreach ($errors->all() as $error)
+                            <p>{{  $error  }}</p>
+                        @endforeach
+                        </div>
+                        @enderror
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -72,7 +79,7 @@
                         <!-- Collapse buttons -->
                         <div>
                             <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            Cliquez ici si vous voulez mettre une image de profil
+                            Cliquez ici Pour choisir une photo
                             </a>
                         </div>
                         <!-- / Collapse buttons -->

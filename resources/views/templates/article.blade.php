@@ -40,7 +40,11 @@
                         </div>
                         <div class="author-info">
                             <h2>{{$article->user->name}} <span>{{$article->user->role->name}}</span></h2>
+                            @if (isset($article->user->description))
                             <p>{{$article->user->description}}</p>
+                            @else
+                            <p>Ce profil n'a pas de description</p>
+                            @endif
                         </div>
                     </div>
                     <!-- Post Comments -->
@@ -90,14 +94,6 @@
             </div>
             <!-- Sidebar area -->
             <div class="col-md-4 col-sm-5 sidebar">
-                <!-- Single widget -->
-                {{-- <div class="widget-item">
-                    <form action="#" class="search-form">
-                        <input type="text" placeholder="Search">
-                        <button class="search-btn"><i class="flaticon-026-search"></i></button>
-                    </form>
-                </div> --}}
-                <!-- Single widget -->
                 <div class="widget-item">
                     <h2 class="widget-title">Categories</h2>
                     <ul>

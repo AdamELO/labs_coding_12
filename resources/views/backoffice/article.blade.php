@@ -5,9 +5,11 @@
         <div class="text-center">
             <h1 class="green-text">Articles</h1>
             <h6>Ps: pour publier un article vous devez check la checkbox en mode Webmaster (dans edit)</h6>
+            @can('create' , App\User::class)
             <a class="btn-floating btn-lg dusty-grass-gradient text-white" href='article/create'>
                 <i class="fas fa-plus text-white"></i>
             </a>
+            @endcan
         </div>
         <div class="row">
             @foreach ($articles->sortByDesc('created_at') as $article)
@@ -49,12 +51,14 @@
                     <p class="mt-4 text-muted">{{\Str::limit($article->text, 70, $end='...') }}</p>
                     <div class="row">
                         <div class="col-6 text-center">
+                            @can('update' , App\User::class)
                             <form action='article/{{$article->id}}/edit' method="get" class="text-center mb-3">
                                 @csrf
                                 <button type="submit" class="btn-floating border-0 btn-lg sunny-morning-gradient text-white">
                                     <i class="fas fa-edit text-white"></i>
                                 </button>
                             </form>
+                            @endcan
                         </div>
                         <div class="col-6 text-center">
                             <form action='article/{{$article->id}}' method='POST'>

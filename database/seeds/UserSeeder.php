@@ -14,13 +14,13 @@ class UserSeeder extends Seeder {
         DB::table( 'users' )->insert( [
             'name' => 'The Labs',
             'email' => 'projet12codingschool@gmail.com',
-            'password' => bcrypt( 'projet.codingschool@gmail.com' ),
+            'password' => bcrypt( 'projet12codingschool@gmail.com' ),
             'role_id' => 1,
             'img'=>'/img/logo.jpg',
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [
-            'name'=> 'Lore Williams',
+            'name'=> 'Adam',
             'email'=> 'adam@example.com',
             'password'=> bcrypt( 'adam@example.com' ),
             'role_id' => 2,
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder {
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [
-            'name'=> 'Michael Smith',
+            'name'=> 'Michelle Smith',
             'email'=> 'member@example.com',
             'password'=> bcrypt( 'member@example.com' ),
             'role_id' => 4,
@@ -45,7 +45,7 @@ class UserSeeder extends Seeder {
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [
-            'name'=> 'Adams elo',
+            'name'=> 'Ayhan',
             'email'=> 'test@example.com',
             'password'=> bcrypt( 'test@example.com' ),
             'role_id' => 3,

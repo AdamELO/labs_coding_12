@@ -80,12 +80,12 @@ class UserController extends Controller {
             'password.required'=>'Le champ du mot de passe est obligatoire.',
         ] );
         $user = User::find( $id );
-        $img = $_POST['img'];
-        if ( isset( $_POST['img'] ) ) {
-            Storage::disk( 'public' )->delete( $user->img );
-            $newName = Storage::disk( 'public' )->put( '', $img );
-            $user->img = $newName;
-        }
+        // $img = $_POST['img'];
+        // if ( isset( $_POST['img'] ) ) {
+        //     Storage::disk( 'public' )->delete( $user->img );
+        //     $newName = Storage::disk( 'public' )->put( '', $img );
+        //     $user->img = $newName;
+        // }
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt( $request->password );

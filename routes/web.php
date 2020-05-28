@@ -19,7 +19,7 @@ Route::get('/services', 'HtmlController@services');
 Route::get('/blog', 'HtmlController@blog');
 Route::get('/contact', 'HtmlController@contact');
 Route::get('/blog-post/{id}', 'HtmlController@blogpost');
-Route::post('profil/{id}','UserController@update')->middleware('auth');
+Route::post('profil/{id}','UserController@update')->middleware(['auth','isRealUser']);
 
 Auth::routes();
 

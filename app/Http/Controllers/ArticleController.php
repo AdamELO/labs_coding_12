@@ -11,6 +11,7 @@ use App\Logo;
 use App\Menu;
 use App\Tag;
 use App\TagArticle;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
@@ -37,6 +38,7 @@ class ArticleController extends Controller {
     */
 
     public function create() {
+        $this->authorize('create' , User::class);
         $tags = Tag::all();
         $categories = Categorie::all();
         $menus = Menu::first();
@@ -52,6 +54,7 @@ class ArticleController extends Controller {
     */
 
     public function store( Request $request ) {
+        $this->authorize('create' , User::class);
         $request->validate( [
             'img'=>'required',
             'text'=>'required',
@@ -118,6 +121,7 @@ class ArticleController extends Controller {
     */
 
     public function edit( Article $article ) {
+        $this->authorize('update' , User::class);
         $tags = Tag::all();
         $categories = Categorie::all();
         $menus = Menu::first();
@@ -136,6 +140,7 @@ class ArticleController extends Controller {
     */
 
     public function update( Request $request, Article $article ) {
+        $this->authorize('update' , User::class);
         $img = $request->file( 'img' );
         if ( $img != null ) {
             Storage::disk( 'public' )->delete( $article->img_article );
