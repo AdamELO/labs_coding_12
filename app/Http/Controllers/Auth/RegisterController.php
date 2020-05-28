@@ -86,11 +86,12 @@ class RegisterController extends Controller {
         // $newName = Storage::disk( 'public' )->put( '', $data['img'] );
         // $user->update( ['img' => $newName] );
 
-        // if ( request()->hasfile( 'img' ) ) {
-        //     $img = request()->file( 'img' )->getClientOriginalName();
-        //     request()->file( 'img' )->storeAs( 'imgs', $user->id . '/' . $img );
-        //     $user->update( ['img' => $img] );
-        // }
+        // $newName = Storage::disk( 'public' )->put( '', $img );
+        if ( request()->hasfile( 'img' ) ) {
+            $img = request()->file( 'img' )->getClientOriginalName();
+            request()->file( 'img' )->storeAs( 'public', $user->id . '/' . $img );
+            $user->update( ['img' => $img] );
+        }
 
         Mail::to( $user->email )->send( new Welcome( $data ) );
         Newsletter::where( 'email', '=', $user->email )->delete();

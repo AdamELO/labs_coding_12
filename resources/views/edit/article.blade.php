@@ -119,7 +119,7 @@
                                     <label for="form10">Text</label>
                                   </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="md-form text-center">
                                     <div class="form-check">
                                         <input type="checkbox" name="test" {{Auth::user()->role_id == 2 ? "" : "disabled"}}  {{$article->accept == "checked" ? 'checked' :""}} class="form-check-input" id="materialUnchecked">
@@ -127,6 +127,18 @@
                                     </div>
                                 </div>
                             </div>
+                            @Webmaster
+                            <div class="col-md-6">
+                                <div class="md-form text-center">
+                                    <div class="form-check">
+                                        <p>Si c'est juste une petite modification et que vous ne voulez pas renvoyer une newsletter ne cochez pas la case suivante !!! </p>
+                                        <p>Il faut egalement publier l'article pour que la newsletter soit envoyé </p>
+                                        <input type="checkbox" name="news" class="form-check-input" id="newsletter">
+                                        <label class="form-check-label" for="newsletter">Envoyer newsletter</label>
+                                    </div>
+                                </div>
+                            </div>
+                            @endWebmaster
                             <div>
                                 <a class="btn aqua-gradient" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 Cliquez ici si vous voulez changer l'image

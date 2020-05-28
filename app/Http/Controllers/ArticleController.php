@@ -154,11 +154,12 @@ class ArticleController extends Controller {
         } else {
             $article->accept = 'unchecked';
         }}
+        $i = 0;
         $article->tags()->sync( $request->tags );
         $article->categories()->sync( $request->cate );
         $article->save();
         if (Auth::user()->role_id == 2) {
-            if (isset( $_POST['test'] )) {
+            if (isset( $_POST['test']) && isset( $_POST['news']) ) {
                 event(new ArticlePublierEvent($article));
             }
         }

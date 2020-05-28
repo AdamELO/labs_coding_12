@@ -26,6 +26,7 @@
                         </div>
                     @endif
                     <h2>Bonjour {{Auth::user()->name}}</h2>
+                    <img src="{{asset('storage/'.Auth::id() . '/' . Auth::user()->img)}}" alt="">
                 </div>
             </div>
         </div>
