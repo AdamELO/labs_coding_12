@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Events\ArticlePublierEvent;
 use App\Events\UserRegisterNewsletterEvent;
+use App\Events\WelcomeEvent;
 use App\Listeners\ArticlePublierListener;
 use App\Listeners\UserRegisterNewsletterListener;
+use App\Listeners\WelcomeListener;
 use App\Mail\WelcomeNewsletter;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -28,6 +30,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         ArticlePublierEvent::class => [
             ArticlePublierListener::class,
+        ],
+        WelcomeEvent::class => [
+            WelcomeListener::class,
         ],
     ];
 

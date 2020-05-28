@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Events\WelcomeEvent;
 use App\Footer;
 use App\Http\Controllers\Controller;
 use App\Menu;
@@ -59,7 +60,6 @@ class RegisterController extends Controller {
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            // 'img' => 'required',
         ] );
     }
 
@@ -82,18 +82,13 @@ class RegisterController extends Controller {
             'password' => Hash::make( $data['password'] ),
             'role_id' => $roleId,
         ] );
-
-        // $newName = Storage::disk( 'public' )->put( '', $data['img'] );
-        // $user->update( ['img' => $newName] );
-
-        // $newName = Storage::disk( 'public' )->put( '', $img );
         if ( request()->hasfile( 'img' ) ) {
-            $img = request()->file( 'img' )->getClientOriginalName();
-            request()->file( 'img' )->storeAs( 'public', $user->id . '/' . $img );
-            $user->update( ['img' => $img] );
+            $newName = Storage::disk( 'public' )->put( '', $data['img'] );
+            $user->update( ['img' => $newName] );
+        }else{
+            $user->update( ['img' => '/img/logo.jpg'] );
         }
-
-        Mail::to( $user->email )->send( new Welcome( $data ) );
+        event(new WelcomeEvent($user));
         Newsletter::where( 'email', '=', $user->email )->delete();
         return $user;
     }
