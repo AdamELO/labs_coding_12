@@ -1,79 +1,106 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# The Labs made by : Adam El Omari
+## projet final Back-end Coding-school-12
+### installation et préparation:
+npm i/composer i
+storage:link
+.env(mailtrap/db avec migrate)
+### languages:
+Php
+blade => Html
+### parties: 
+- Home
+- Service
+- Blog
+- Contact
+- Login/Register/Profil
+- Backoffice
+### Roles et Users dans la DB
+- Admin: mail = projet12codingschool@gmail.com || mdp = projet12codingschool@gmail.com
+- Webmaster: mail = adam@example.com || mdp = adam@example.com
+- Rédacteur: mail = test@example.com || mdp = test@example.com
+- membres : mail = membre@example.com || mdp = membre@example.com && mail = member@example.com || mdp = member@example.com
+# Home
+## Navbar
+Logo et les titres des onglets modifiable dans le backoffice.
+## Titres
+Tout les titres dans une background mauve sont modifiable en changer la couleur d'un mot en surligné
+vert en mettant le mot entre parenthese dans le backoffice partie titre.
+## Banner carousel
+le logo est le meme que celui de la navbar, crud complet pour le carousel avec image et slogan
+## Services rapides 
+3 services aléatoire
+## Présentation->Video->Testimonial
+video modifiable avec son thumbnail et information sur presentation seulement modifiable.
+Temoignages crud complet du text nom prenom img de la personne.
+max 6 dernier témoignages.
+## services
+9 dernier services avec pagination si il ya plus que 9 services + crud complet dans backoffice.
+icones et services sont reliés par one to many.
+## Team
+CEO au milieu (seulement CEO en majuscule et il si il y deux CEO seulement le premier apparait)
+les autres fonctions sur les cotés et de maniere aleatoire.
+la partie fonctionalité de team n'a pas été faite car non comprensible
+## Ready
+petite banniere verte avec texts modifiable et btn va vers contact
+## contact
+les infos contact sont modifiable et pour le formulaire de contact le message se trouve dans la partie mail du backoffice.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# Services
+## Banner
+pour la banniere service/contact/blog les noms sont les memes que les noms de la navbar donc on peut les modifier dans le backoffice partie menu.
+## services
+meme chose que services dans home
+le btn va vers service primé
+## services primés
+les 6 derniers services sont affichés
+l'image du telephone n'est pas modifiable
+## blog rapides
+les 3 derniers article dans la DB qui sont publié
+## newsletter
+disponible seulement si on est pas connecté car tous les membres sont deja inscrit à la newsletter
+si on est inscrit comme invité à la newsletter et que apres on s'inscrit sur le site, on est
+automatquement enlvé des inscrit a la newsletter comme invité et on devient inscrit à la newsletter en tant que membre.
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Blog
+## Blog
+liste des articles avec pagination, le dernier article est tout en haut de la liste
+publier seulement si le btn publier a été coché par un webmaster dans le backoffice.
+une fonction search est présente et permet de retrouver un article grace a son titre
+## blog post 
+en appuyant sur read me d'un article 
+on peut voir tout l'article les informtions de l'auteur les commentaires (on peut ecrire un commentaire seulement si on est connecté et ça met automatiquement dan le input email et name notre nom et email de user)
+et les tags et catégories reliés à l'article en many to many
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Contact
+## Googlemaps
+la carte de google maps est modifiable
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Footer 
+le text est modifiable
 
-## Learning Laravel
+# Login
+pour se connecter
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Register
+pour s'inscrire, on peut rajouter une photo mais c'est pas obligatoire si on le fait pas on aura une img de profil auto.
+on recoit un mail de bienvenue.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# profil
+dispo seulement quand on est connecté on mettre a jour son profil
 
-## Laravel Sponsors
+# admin 
+c'est le backoffice.
+seulement le rédacteur/webmaster/admin ont accès au backoffice
+## backoffice
+- Admin : peut tout faire sauf la partie team et n'a ps acces au crud create et edit de Blog Article
+- Webmaster : peut tout faire sauf changer le role d'une personne (seulement l'admin peut le faire), il est 
+le seul qui peut permettre de publier un article
+- Rédacteur : a accès seulement à blog mais ne peut pas publier un article
+### backoffice Article publier et newsletter précision
+un rédacteur peut écrire un aricle mais l'article ne sera pas publier et aucune newsletter ne sera envoyé.
+pour que l'article soit publier il faut qu'un webmaster coche la checkbox publier,
+pour qu'une newsletter soit envoyé avec les information de l'article il faut coché le checkbox newsletter.
+l'admin peut seulement supprimer un article si il estime que le contenu est offensant.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# fin projet ...
