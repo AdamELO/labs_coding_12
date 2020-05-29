@@ -84,6 +84,7 @@
                         </div>
                         <!-- Collapse buttons -->
                         <div>
+                            <h4>Pas obligatoire</h4>
                             <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             Cliquez ici Pour choisir une photo
                             </a>

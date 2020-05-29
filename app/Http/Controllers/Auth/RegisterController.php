@@ -15,6 +15,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -61,7 +62,6 @@ class RegisterController extends Controller {
             'prenom' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'img' => ['required']
         ] );
     }
 
@@ -78,20 +78,29 @@ class RegisterController extends Controller {
         } else {
             $roleId = 4;
         }
+
+        $request = request();
+        if ($request->hasfile('img')) {
+            $profileImage = $request->file('img');
+            $newName = Storage::disk( 'public' )->put( '', $profileImage );
+        } else {
+            $newName = '/img/logo.jpg';
+        }
+        
         $user = User::create( [
             'name' => $data['name'],
             'prenom' => $data['prenom'],
             'email' => $data['email'],
             'password' => Hash::make( $data['password'] ),
             'role_id' => $roleId,
-            'img' => $data['img']
+            'img' => $newName
         ] );
-        if ( request()->hasfile( 'img' ) ) {
-            $newName = Storage::disk( 'public' )->put( '', $data['img'] );
-            $user->update( ['img' => $newName] );
-        }else{
-            $user->update( ['img' => '/img/logo.jpg'] );
-        }
+        // if ( request()->hasfile( 'img' ) ) {
+        //     $newName = Storage::disk( 'public' )->put( '', $data['img'] );
+        //     $user->update( ['img' => $newName] );
+        // }else{
+        //     $user->update( ['img' => '/img/logo.jpg'] );
+        // }
         event(new WelcomeEvent($user));
         Newsletter::where( 'email', '=', $user->email )->delete();
         return $user;

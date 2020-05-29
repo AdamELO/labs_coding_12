@@ -36,7 +36,12 @@
                     <!-- Post Author -->
                     <div class="author">
                         <div class="avatar">
-                            <img src="{{$article->user->img}}" alt="">
+                            {{-- <img src="{{$article->user->img}}" alt=""> --}}
+                            @if (Storage::disk('public')->has($article->user->img))
+                                <img src="{{asset('storage/'.$article->user->img)}}" alt="">
+                            @else
+                                <img src="{{$article->user->img}}" alt="">
+                            @endif
                         </div>
                         <div class="author-info">
                             <h2>{{$article->user->name}} {{$article->user->prenom}} <span>{{$article->user->role->name}}</span></h2>
@@ -54,10 +59,14 @@
                             @foreach ($article->commentaires as $commentaire)
                             <li>
                                 <div class="avatar">
-                                    <img src="{{$commentaire->user->img}}" alt="">
+                                    @if (Storage::disk('public')->has($commentaire->user->img))
+                                        <img src="{{asset('storage/'.$commentaire->user->img)}}" alt="">
+                                    @else
+                                        <img src="{{$commentaire->user->img}}" alt="">
+                                    @endif
                                 </div>
                                 <div class="commetn-text">
-                                    <h3>{{$commentaire->user->name}} {{$commentaire->user->prenom}},| {{date('d M', strtotime($commentaire->created_at))}}, {{date('Y', strtotime($commentaire->created_at))}} | Reply</h3>
+                                    <h3>{{$commentaire->user->name}} {{$commentaire->user->prenom}}| {{date('d M', strtotime($commentaire->created_at))}}, {{date('Y', strtotime($commentaire->created_at))}} | Reply</h3>
                                     <p>{{$commentaire->text}}</p>
                                 </div>
                             </li>

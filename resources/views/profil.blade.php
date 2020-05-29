@@ -25,7 +25,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h2 class="text-center mb-2">Bonjour {{Auth::user()->name}}</h2>
+                    <h2 class="text-center mb-2">Bonjour {{Auth::user()->name}} {{Auth::user()->prenom}}</h2>
                     <div class="row">
                         <div class="col">
                             @if ($errors->any())
@@ -41,7 +41,7 @@
                             </div>
                             @endif
                             <h6 class="text-center mb-2">Vous pouvez modifier votre profil ici</h6>
-                            <form action="/profil/{{Auth::id()}}" method="POST">
+                            <form action="/profil/{{Auth::id()}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Name</label>
@@ -63,7 +63,7 @@
                                     <label for="form10">Description profil</label>
                                     <textarea id="form10" class="form-control" name="description" rows="3">{{Auth::user()->description}}</textarea>
                                 </div>
-                                {{-- <!-- Collapse buttons -->
+                                <!-- Collapse buttons -->
                                 <div>
                                     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Cliquez ici si vous voulez changer l'image
@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                                 <button type="submit" class="btn btn-primary mt-5">Editer</button>
                               </form>
                         </div>
