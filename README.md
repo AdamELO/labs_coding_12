@@ -5,8 +5,8 @@ npm i/composer i
 storage:link
 .env(mailtrap/db avec migrate)
 ### languages:
-Php
-blade => Html
+- Php
+- blade => Html
 ### parties: 
 - Home
 - Service
