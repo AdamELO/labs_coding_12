@@ -280,8 +280,8 @@
                 <!-- Card -->
             </div>
             @endAdminmaster
-
-            {{-- <div class="col-12 mb-4">
+            @Admin
+            <div class="col-3 mb-4">
 
               <!-- Card -->
               <div class="card">
@@ -289,15 +289,16 @@
                   <!-- Card Data -->
                   <div class="row mt-3 mb-3">
                       <div class="col-12 text-center">
-                          <a href="/adminpro" class="btn-floating btn-lg blue accent-2"><i
+                          <a href="/roles" class="btn-floating btn-lg blue accent-2"><i
                                   class="fas fa-key" aria-hidden="true"></i></a>
-                        <h5>Admin Profil</h5>
+                        <h5>Roles</h5>
                       </div>
                   </div>
                   <!-- Card Data -->
               </div>
               <!-- Card -->
-          </div> --}}
+          </div>
+          @endAdmin
 
         </div>
         <!-- Grid row -->

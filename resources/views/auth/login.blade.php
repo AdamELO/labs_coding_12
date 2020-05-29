@@ -81,9 +81,6 @@
     </div>
 </div>
 @endsection
-{{-- @section('footer')
-   @include('templates.footer')
-@endsection --}}
 @section('script')
    @include('templates.script')
 @endsection

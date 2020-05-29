@@ -39,7 +39,7 @@
                             <img src="{{$article->user->img}}" alt="">
                         </div>
                         <div class="author-info">
-                            <h2>{{$article->user->name}} <span>{{$article->user->role->name}}</span></h2>
+                            <h2>{{$article->user->name}} {{$article->user->prenom}} <span>{{$article->user->role->name}}</span></h2>
                             @if (isset($article->user->description))
                             <p>{{$article->user->description}}</p>
                             @else
@@ -57,7 +57,7 @@
                                     <img src="{{$commentaire->user->img}}" alt="">
                                 </div>
                                 <div class="commetn-text">
-                                    <h3>{{$commentaire->user->name}},| {{date('d M', strtotime($commentaire->created_at))}}, {{date('Y', strtotime($commentaire->created_at))}} | Reply</h3>
+                                    <h3>{{$commentaire->user->name}} {{$commentaire->user->prenom}},| {{date('d M', strtotime($commentaire->created_at))}}, {{date('Y', strtotime($commentaire->created_at))}} | Reply</h3>
                                     <p>{{$commentaire->text}}</p>
                                 </div>
                             </li>
@@ -74,7 +74,7 @@
                                         @csrf
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <input type="text" value="{{Auth::user()->name}}" name="name" disabled class="disabled">
+                                                <input type="text" value="{{Auth::user()->name . ' ' . Auth::user()->prenom}}" name="name" disabled class="disabled">
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" value="{{Auth::user()->email}}" name="email" disabled class="disabled">

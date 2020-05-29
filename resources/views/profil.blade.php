@@ -48,6 +48,10 @@
                                   <input type="text" name="name" value="{{Auth::user()->name}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Prenom</label>
+                                    <input type="text" name="prenom" value="{{Auth::user()->prenom}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
                                     <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                   </div>
@@ -94,7 +98,7 @@
                     @endif
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">{{Auth::user()->name}}</h5>
+                  <h5 class="card-title text-center">{{Auth::user()->name}} {{Auth::user()->prenom}}</h5>
                   <h6 class="text-center">{{Auth::user()->email}}</h6>
                   <p>{{Auth::user()->description}}</p>
                 </div>
@@ -103,9 +107,6 @@
     </div>
 </div>
 @endsection
-{{-- @section('footer')
-   @include('templates.footer')
-@endsection --}}
 @section('script')
    @include('templates.script')
 @endsection

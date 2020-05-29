@@ -36,7 +36,7 @@
                     <h3 class="mb-3 font-weight-bold text-info"><strong>{{$article->titre}}</strong></h3>
                     <div class="d-flex">
                         <h6>{{date('d M Y', strtotime($article->date)) }} &nbsp; </h6>
-                        <h6> {{$article->user->name}}</h6>
+                        <h6> {{$article->user->name}} {{$article->user->prenom}}</h6>
                     </div>
                     <h6> Catégories:
                         @foreach ($article->categories as $cate)

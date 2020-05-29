@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <section class="section card mb-5">
             <h2 class="h1-responsive font-weight-bold green-text text-center my-4">Create article</h2>
-            <p class="text-center">Auteur : {{Auth::user()->name}}</p>
+            <p class="text-center">Auteur : {{Auth::user()->name}} {{Auth::user()->prenom}}</p>
             <h4 class="text-center my-4">Ps: Pour les tags et catégories vous pouvez en choisir plusieurs en faisant ctrl+click </h4>
             <div class="row">
                 <div class="col-md-12 mb-md-0 mb-5">

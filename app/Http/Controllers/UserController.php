@@ -87,6 +87,7 @@ class UserController extends Controller {
         //     $user->img = $newName;
         // }
         $user->name = $request->name;
+        $user->prenom = $request->prenom;
         $user->email = $request->email;
         $user->password = bcrypt( $request->password );
         $user->description = $request->description;

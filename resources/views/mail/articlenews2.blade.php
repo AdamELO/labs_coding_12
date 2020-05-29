@@ -1,5 +1,5 @@
 @component('mail::message')
-<h1>Bonjour {{$user->name}}</h1>
+<h1>Bonjour {{$user->name}} {{$user->prenom}}</h1>
 <p>un article a été publié</p>
 <h2>{{$article->titre}}</h2>
 <p>{{\Str::limit($article->text, 60, $end='...') }}</p>

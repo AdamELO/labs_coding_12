@@ -40,6 +40,12 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="prenom" class="col-md-4 col-form-label text-md-right">Prénom</label>
+                            <div class="col-md-6">
+                                <input  type="text" name="prenom" class="form-control" id="prenom">
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -109,9 +115,6 @@
     </div>
 </div>
 @endsection
-{{-- @section('footer')
-   @include('templates.footer')
-@endsection --}}
 @section('script')
    @include('templates.script')
 @endsection

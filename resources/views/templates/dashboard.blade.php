@@ -194,6 +194,15 @@
                 </li>
             </ul>
             @endAdminmaster
+            @Admin
+            <ul class="mt-2">
+                <li>
+                    <a href="/roles" class="collapsible-header waves-effect list-style-none text-dark">
+                        <i class="w-fa fas fa-key text-info"></i>&nbsp; Roles
+                    </a>
+                </li>
+            </ul>
+            @endAdmin
           </li>
         <!-- Side navigation links -->
 

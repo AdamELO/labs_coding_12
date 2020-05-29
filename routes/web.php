@@ -50,3 +50,4 @@ Route::resource('/googlemaps','GoogleController')->middleware(['auth','isAdminma
 Route::get('/search', 'HtmlController@search');
 Route::post('/blog-post/{id}','CommentaireController@store')->middleware('auth');
 Route::resource('/newsletter','NewsletterController');
+Route::resource('/roles','RoleController')->middleware(['auth','isAdmin']);

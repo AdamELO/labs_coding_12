@@ -13,6 +13,7 @@ class UserSeeder extends Seeder {
     public function run() {
         DB::table( 'users' )->insert( [
             'name' => 'The Labs',
+            'prenom' => 'Projet',
             'email' => 'projet12codingschool@gmail.com',
             'password' => bcrypt( 'projet12codingschool@gmail.com' ),
             'role_id' => 1,
@@ -20,7 +21,8 @@ class UserSeeder extends Seeder {
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [
-            'name'=> 'Adam',
+            'name'=> 'Elo',
+            'prenom' => 'Adam',
             'email'=> 'adam@example.com',
             'password'=> bcrypt( 'adam@example.com' ),
             'role_id' => 2,
@@ -29,7 +31,8 @@ class UserSeeder extends Seeder {
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [
-            'name'=> 'Michael Smith',
+            'name'=> 'Smith',
+            'prenom' => 'Michel',
             'email'=> 'membre@example.com',
             'password'=> bcrypt( 'membre@example.com' ),
             'role_id' => 4,
@@ -37,7 +40,8 @@ class UserSeeder extends Seeder {
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [
-            'name'=> 'Michelle Smith',
+            'name'=> 'Jones',
+            'prenom' => 'Michelle',
             'email'=> 'member@example.com',
             'password'=> bcrypt( 'member@example.com' ),
             'role_id' => 4,
@@ -45,7 +49,8 @@ class UserSeeder extends Seeder {
             'created_at' => now()
         ] );
         DB::table( 'users' )->insert( [
-            'name'=> 'Ayhan',
+            'name'=> 'Kardash',
+            'prenom'=> 'Ayhan',
             'email'=> 'test@example.com',
             'password'=> bcrypt( 'test@example.com' ),
             'role_id' => 3,

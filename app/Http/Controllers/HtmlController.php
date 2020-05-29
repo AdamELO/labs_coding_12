@@ -11,7 +11,6 @@ use App\Titre;
 use App\Presentation;
 use App\Slogan;
 use App\Service;
-use App\Icon;
 use App\User;
 use App\Tag;
 use App\Footer;
@@ -21,10 +20,8 @@ use App\Serviceprim;
 use App\Testimonial;
 use App\Commentaire;
 use App\Categorie;
-use App\CategorieArticle;
 use App\Google;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class HtmlController extends Controller {
