@@ -23,7 +23,7 @@ storage:link
 ## Navbar
 Logo et les titres des onglets modifiable dans le backoffice.
 ## Titres
-Tout les titres dans une background mauve sont modifiable en changer la couleur d'un mot en surligné
+Tout les titres dans une background mauve sont modifiable , changer la couleur d'un mot en surligné
 vert en mettant le mot entre parenthese dans le backoffice partie titre.
 ## Banner carousel
 le logo est le meme que celui de la navbar, crud complet pour le carousel avec image et slogan
@@ -34,7 +34,7 @@ video modifiable avec son thumbnail et information sur presentation seulement mo
 Temoignages crud complet du text nom prenom img de la personne.
 max 6 dernier témoignages.
 ## services
-9 dernier services avec pagination si il ya plus que 9 services + crud complet dans backoffice.
+9 derniers services avec pagination si il ya plus que 9 services + crud complet dans backoffice.
 icones et services sont reliés par one to many.
 ## Team
 CEO au milieu (seulement CEO en majuscule et il si il y deux CEO seulement le premier apparait)
@@ -87,7 +87,7 @@ pour s'inscrire, on peut rajouter une photo mais c'est pas obligatoire si on le 
 on recoit un mail de bienvenue.
 
 # profil
-dispo seulement quand on est connecté on mettre a jour son profil
+dispo seulement quand on est connecté , pour mettre a jour son profil
 
 # admin 
 c'est le backoffice.
@@ -98,9 +98,9 @@ seulement le rédacteur/webmaster/admin ont accès au backoffice
 le seul qui peut permettre de publier un article
 - Rédacteur : a accès seulement à blog mais ne peut pas publier un article
 ### backoffice Article publier et newsletter précision
-un rédacteur peut écrire un aricle mais l'article ne sera pas publier et aucune newsletter ne sera envoyé.
+un rédacteur peut écrire un aricle mais l'article ne sera pas publier et aucune newsletter ne sera envoyée.
 pour que l'article soit publier il faut qu'un webmaster coche la checkbox publier,
-pour qu'une newsletter soit envoyé avec les information de l'article il faut coché le checkbox newsletter.
+pour qu'une newsletter soit envoyée avec les information de l'article il faut coché le checkbox newsletter.
 l'admin peut seulement supprimer un article si il estime que le contenu est offensant.
 
 # fin projet ...
